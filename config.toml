@@ -1,4 +1,4 @@
-baseURL = "https://aws.cloud.pipeline.ai"
+baseURL = "https://pipeline.ai/aws"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "AWS Kubeflow Workshop"
