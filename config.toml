@@ -15,7 +15,7 @@ hrefTargetBlank = true
 [params]
 themeVariant = "mine"
 showVisitedLinks = false
-author = "Chris Fregly
+author = "Chris Fregly"
 description = "AWS Kubeflow Workshop"
 disableSearch = false
 disableAssetsBusting = false
