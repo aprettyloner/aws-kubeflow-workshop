@@ -1,0 +1,37 @@
+baseURL = "https://aws.cloud.pipeline.ai"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "AWS Kubeflow Workshop"
+theme = "learn"
+uglyurls = true
+googleAnalytics = "UA-78551725-1"
+sectionPagesMenu = "main"
+pygmentsCodeFences = true
+
+[blackfriday]
+hrefTargetBlank = true
+
+[params]
+themeVariant = "mine"
+showVisitedLinks = false
+author = "Chris Fregly
+description = "AWS Kubeflow Workshop"
+disableSearch = false
+disableAssetsBusting = false
+
+disableInlineCopyToClipBoard = false
+disableShortcutsTitle = false
+disableLanguageSwitchingButton = false
+disableBreadcrumb = true
+disableNextPrev = true
+ordersectionsby = "weight"
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-twitter fa-lg'></i> @cfregly"
+identifier = "tw"
+url = "https://twitter.com/cfregly"
+weight = 1
+
+[outputs]
+home = [ "HTML", "AMP", "RSS", "JSON"]
+page = [ "HTML", "AMP"]
