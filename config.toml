@@ -1,9 +1,8 @@
-
-baseURL = "https://pipeline.ai/aws"
+baseURL = "https://pipeline.ai"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "AWS Kubeflow Workshop"
-theme = "hugh-theme-learn"
+theme = "hugo-theme-learn"
 uglyurls = true
 googleAnalytics = "UA-78551725-1"
 sectionPagesMenu = "main"
