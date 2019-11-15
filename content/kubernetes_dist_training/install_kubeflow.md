@@ -7,7 +7,7 @@ weight: 5
 #### Download the kfctl CLI tool
 
 ```
-curl --silent --location https://github.com/kubeflow/kubeflow/releases/download/v0.7.0-rc.6/kfctl_v0.7.0-rc.5-7-gc66ebff3_linux.tar.gz | tar xz
+curl --silent --location https://github.com/kubeflow/kubeflow/releases/download/v0.7.0/kfctl_v0.7.0_linux.tar.gz | tar xz
 
 sudo mv kfctl /usr/local/bin
 ```
