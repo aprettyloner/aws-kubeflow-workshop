@@ -18,6 +18,6 @@ git clone https://github.com/PipelineAI/aws-kubeflow-workshop.git
 ```
 
 * Confirm that you're able to see the contents. Should see 3 parts
-```
+```bash
 ls aws-kubeflow-workshop/notebooks
 ```
