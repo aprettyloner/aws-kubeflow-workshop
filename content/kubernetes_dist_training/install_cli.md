@@ -12,7 +12,7 @@ cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
 
 #### Install `eksctl`
 
-To get started we'll fist install the eksctl CLI tool. [eksctl](https://eksctl.io) simplifies the process of creating EKS clusters.
+To get started we'll first install the eksctl CLI tool. [eksctl](https://eksctl.io) simplifies the process of creating EKS clusters.
 
 ```bash
 pip install awscli --upgrade --user
