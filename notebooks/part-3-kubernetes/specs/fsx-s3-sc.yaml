@@ -6,8 +6,8 @@ provisioner: fsx.csi.aws.com
 parameters:
   subnetId: subnet-0cc08b79360c1c63c
   securityGroupIds: sg-09187f394a01d6211
-  s3ImportPath: s3://pipelineai/
-  s3ExportPath: s3://pipelineai/
+  s3ImportPath: s3://pipeline.ai/
+  s3ExportPath: s3://pipeline.ai/
   apiVersion: v1
 volumeBindingMode: Immediate
 

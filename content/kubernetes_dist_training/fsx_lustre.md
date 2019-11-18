@@ -59,8 +59,17 @@ sed -i .bak "s@BUCKET_NAME@$BUCKET_NAME@" specs/storage-class-fsx-s3.yaml
 #envsubst < specs/storage-class-fsx-s3-template.yaml > specs/storage-class-fsx-s3.yaml
 ```
 
+#### Setup IAM Policies to allow Worker Nodes to Access FSx and S3
+```
+export POLICY_ARN=$(aws iam create-policy --policy-name fsx-csi --policy-document file://./specs/fsx_lustre_policy.json --query "Policy.Arn" --output text)
+echo "export POLICY_ARN=${POLICY_ARN}" | tee -a ~/.bash_profile
+aws iam attach-role-policy --policy-arn ${POLICY_ARN} --role-name ${INSTANCE_ROLE_NAME}
+```
+
 #### Deploy the StorageClass and PersistentVolumeClaim
 ```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/deploy/kubernetes/manifest.yaml
+
 kubectl apply -f specs/fsx-s3-sc.yaml
 kubectl apply -f specs/fsx-s3-pvc.yaml
 ```
