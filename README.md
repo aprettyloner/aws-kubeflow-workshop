@@ -4,6 +4,6 @@
 <hr>
 This repository contains code, webpages and config files accompanying the AWS Distributed Training Workshop based on this github repo:  https://github.com/shashankprasanna/distributed-training-workshop
 
-* [Workshop content](https://pipeline.ai/aws)
+* [Workshop content](https://aws.pipeline.ai)
 
 * [Presentation slides](static/tf-world-distributed-training-workshop.pdf)
