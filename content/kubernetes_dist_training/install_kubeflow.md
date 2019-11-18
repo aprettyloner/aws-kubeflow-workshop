@@ -23,7 +23,7 @@ export CONFIG='https://raw.githubusercontent.com/kubeflow/manifests/v0.7-branch/
 ```
 CLUSTER_NAME=$(eksctl get cluster --output=json | jq '.[0].name' --raw-output)
 
-INSTANCE_ROLE_NAME=$(eksctl get iamidentitymapping --name ${CLUSTER_NAME} --output=json | jq '.[0].rolearn' --raw-output | sed -e 's/.*\///')
+INSTANCE_ROLE_NAME=$(eksctl get iamidentitymapping --cluster ${CLUSTER_NAME} --output=json | jq '.[0].rolearn' --raw-output | sed -e 's/.*\///')
 ```
 
 {{% notice warning %}}
