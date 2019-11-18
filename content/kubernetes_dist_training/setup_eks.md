@@ -45,9 +45,9 @@ eksctl create cluster \
 To launch a cluster with GPU use the script `gpu_eks_cluster.sh` instead. If you wish to launch a cluster with more than 2 nodes, update the `nodes` argument to number of nodes you want in the cluster.
 {{% /notice %}}
 
- Now launch an EKS cluster:
+Now launch an EKS cluster:
 ```
-sh cpu_eks_cluster.sh
+./cpu_eks_cluster.sh
 ```
 
 You should an output that something similar to this.
