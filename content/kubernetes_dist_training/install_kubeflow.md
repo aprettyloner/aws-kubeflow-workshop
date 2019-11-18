@@ -73,7 +73,7 @@ kfctl build -V -f ${CONFIG_FILE}
 #### Apply the changes and deploy Kubeflow
 ```
 cd ${KF_DIR}
-rm -rf kustomize/
+#rm -rf kustomize/
 kfctl apply -V -f ${CONFIG_FILE}
 ```
 
@@ -86,5 +86,5 @@ kubectl -n kubeflow get all
 
 #### Delete the usage reporting beacon
 ```
-kubectl delete -n kubeflow deploy spartakus-volunteer
+kubectl delete -n kubeflow deploy -l app=spartakus
 ```

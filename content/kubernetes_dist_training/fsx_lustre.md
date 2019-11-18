@@ -61,8 +61,8 @@ sed -i .bak "s@BUCKET_NAME@$BUCKET_NAME@" specs/storage-class-fsx-s3.yaml
 
 #### Deploy the StorageClass and PersistentVolumeClaim
 ```
-kubectl apply -f specs/storage-class-fsx-s3.yaml
-kubectl apply -f specs/claim-fsx-s3.yaml
+kubectl apply -f specs/fsx-s3-sc.yaml
+kubectl apply -f specs/fsx-s3-pvc.yaml
 ```
 
 You can check the status by running the following command. Hit `Ctrl+C` if you don't want the terminal to be blocked. To manually check, run the command without `-w`
@@ -70,5 +70,5 @@ You can check the status by running the following command. Hit `Ctrl+C` if you d
 *This will take several minutes, so please be patient!*
 
 ```
-kubectl get pvc fsx-claim -w
+kubectl get pvc fsx-claim 
 ```
