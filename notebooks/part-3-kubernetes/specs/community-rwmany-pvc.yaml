@@ -11,4 +11,5 @@ spec:
   resources:
     requests:
       storage: 25Gi
-  storageClassName: fsx-sc
+  storageClassName: fsx.csi.aws.com 
+
