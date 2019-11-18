@@ -4,7 +4,7 @@ date: 2019-10-28T12:59:15-07:00
 weight: 1
 ---
 Navigate to
-***distributed-training-workshop > notebooks > part-2-sagemaker***
+***aws-kubeflow-workshop > notebooks > part-2-sagemaker***
 You should see the following files:
 
 ```bash

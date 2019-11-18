@@ -8,7 +8,7 @@ weight: 2
 On a terminal window in JupyterLab client, navigate to the notebook directory
 
 ```
-cd ~/SageMaker/distributed-training-workshop/notebooks/
+cd ~/SageMaker/aws-kubeflow-workshop/notebooks/
 ```
 Activate the TensorFlow conda environment
 ```

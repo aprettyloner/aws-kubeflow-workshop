@@ -5,7 +5,7 @@ weight: 8
 ---
 #### Confirm that you are in the right directory
 ```
-cd ~/SageMaker/distributed-training-workshop/notebooks/part-3-kubernetes/
+cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
 ```
 #### Copy the container image name
 

@@ -5,7 +5,7 @@ weight: 3
 ---
 
 <br> Open `cifar10-sagemaker-distributed.ipynb` and run through the cells. The following notebook is located at: <br>
-***distributed-training-workshop > notebooks > part-2-sagemaker > cifar10-sagemaker-distributed.ipynb***
+***aws-kubeflow-workshop > notebooks > part-2-sagemaker > cifar10-sagemaker-distributed.ipynb***
 
 ![sm_notebook](/images/sagemaker/sm_notebook.png)
 

@@ -9,7 +9,7 @@ weight: 3
 <br>In this section you'll get familiar with the training script we'll be converting for distributed training in the next notebook.
 
 Open `cifar10-single-instance.ipynb` and run through the cells. The following notebook is located at: <br>
-***distributed-training-workshop > notebooks > part-1-horovod***
+***aws-kubeflow-workshop > notebooks > part-1-horovod***
 
 ![singe_instance](/images/convert_script/single_instance.png)
 

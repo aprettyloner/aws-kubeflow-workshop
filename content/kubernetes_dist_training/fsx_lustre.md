@@ -45,7 +45,7 @@ aws ec2 authorize-security-group-ingress --group-id ${SECURITY_GROUP_ID} --proto
 #### Update the environment variables in the storage class spec file
 Running envsubst will populate SUBNET_ID, SECURITY_GROUP_ID, BUCKET_NAME
 ```
-cd ~/SageMaker/distributed-training-workshop/notebooks/part-3-kubernetes/
+cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
 
 envsubst < specs/storage-class-fsx-s3-template.yaml > specs/storage-class-fsx-s3.yaml
 ```

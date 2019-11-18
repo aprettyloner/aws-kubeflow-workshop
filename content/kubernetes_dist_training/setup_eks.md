@@ -4,12 +4,12 @@ date: 2019-10-28T15:14:12-07:00
 weight: 3
 ---
 
-Navigate to ***distributed-training-workshop > notebooks > part-3-sagemaker***
+Navigate to ***aws-kubeflow-workshop > notebooks > part-3-sagemaker***
 
 The `cpu_eks_cluster.sh` and `gpu_eks_cluster.sh` files include the necessary options to lauch a CPU or GPU cluster. Take a look at the options by running the following script to launch an EKS clusters
 
 ```bash
-cd ~/SageMaker/distributed-training-workshop/notebooks/part-3-kubernetes/
+cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
 cat cpu_eks_cluster.sh
 ```
 You should see the following output

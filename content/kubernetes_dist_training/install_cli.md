@@ -6,7 +6,7 @@ weight: 2
 
 Navigate to the following directory for part 3 of the workshop
 ```
-cd ~/SageMaker/distributed-training-workshop/notebooks/part-3-kubernetes/
+cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
 ```
 
 
