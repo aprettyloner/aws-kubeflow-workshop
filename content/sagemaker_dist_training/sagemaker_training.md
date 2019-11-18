@@ -38,12 +38,12 @@ bucket_name = 'tfworld2019-<your_bucket_name>'
 **Step 2:** Specify hyperparameters, instance type and number of instances to distribute training to. The `hvd_processes_per_host` corrosponds to number of GPUs per instances.
 For example, if you choose:
 ```
-hvd_instance_type = 'ml.p3.8large'
+hvd_instance_type = 'ml.p3.2xlarge'
 hvd_instance_count = 2
-hvd_processes_per_host = 4
+hvd_processes_per_host = 1
 ```
 
-Since p3.8xlarge instance has 4 GPUs, we'll we distributing training to 8 workers, 1 per GPU.
+Since p3.2xlarge instance has 1 GPU, we'll we distributing training to 2 workers, 1 worker per GPU.
 This is spread across 2 instances (or nodes). SageMaker automatically takes care of spinning up these instances and making sure they can communiate with each other.
 
 
