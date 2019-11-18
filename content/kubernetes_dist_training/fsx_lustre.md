@@ -52,9 +52,9 @@ Running envsubst will populate SUBNET_ID, SECURITY_GROUP_ID, BUCKET_NAME
 ```
 cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
 
-sed -i .bak "s@SUBNET_ID@$SUBNET_ID@" specs/storage-class-fsx-s3.yaml
-sed -i .bak "s@SECURITY_GROUP_ID@$SECURITY_GROUP_ID@" specs/storage-class-fsx-s3.yaml 
-sed -i .bak "s@BUCKET_NAME@$BUCKET_NAME@" specs/storage-class-fsx-s3.yaml
+sed "s@SUBNET_ID@$SUBNET_ID@" specs/fsx-s3-sc.yaml.template > fsx-s3-sc.yaml
+sed -i .bak "s@SECURITY_GROUP_ID@$SECURITY_GROUP_ID@" specs/fsx-s3-sc.yaml 
+sed -i .bak "s@BUCKET_NAME@$BUCKET_NAME@" specs/fsx-s3-sc.yaml
 
 #envsubst < specs/storage-class-fsx-s3-template.yaml > specs/storage-class-fsx-s3.yaml
 ```

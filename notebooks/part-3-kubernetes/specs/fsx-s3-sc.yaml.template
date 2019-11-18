@@ -4,10 +4,9 @@ metadata:
   name: fsx-sc
 provisioner: fsx.csi.aws.com
 parameters:
-  subnetId: subnet-0cc08b79360c1c63c
-  securityGroupIds: sg-09187f394a01d6211
-  s3ImportPath: s3://pipeline.ai/
-  s3ExportPath: s3://pipeline.ai/
+  subnetId: SUBNET_ID 
+  securityGroupIds: SECURITY_GROUP_ID
+  s3ImportPath: s3://BUCKET_NAME/import
+  s3ExportPath: s3://BUCKET_NAME/export
   apiVersion: v1
 volumeBindingMode: Immediate
-
