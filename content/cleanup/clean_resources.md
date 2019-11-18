@@ -29,18 +29,22 @@ These policies were automatically added to the node IAM roles, but we'll need to
 
 * Copy the role associated with the worker instances
 ```
-echo $INSTANCE_ROLE_NAME
+echo $ROLE_NAME
 ```
 * Navigate to IAM console
 * Click on Roles on the left pane
-* Search for the output of `echo $INSTANCE_ROLE_NAME`
+* Search for the output of `echo $ROLE_NAME`
 * Delete the two inline policies.
  * `iam_alb_ingress_policy`
  * `iam_csi_fsx_policy`
 
-#### Finally, delete the cluster
+#### Finally, delete the CPU cluster
 ```
-eksctl delete cluster aws-tf-cluster-cpu
+eksctl delete cluster cpu
+```
+Optionally, delete the GPU cluster
+```
+eksctl delete cluster gpu
 ```
 
 ## SageMaker resources

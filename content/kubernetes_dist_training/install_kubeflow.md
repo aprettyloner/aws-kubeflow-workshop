@@ -15,22 +15,27 @@ sudo mv kfctl /usr/local/bin
 #### Get the latest Kubeflow configuration file
 
 ```
-export CONFIG='https://raw.githubusercontent.com/kubeflow/manifests/v0.7-branch/kfdef/kfctl_aws.0.7.0.yaml'
+export CONFIG_URI='https://raw.githubusercontent.com/kubeflow/manifests/v0.7-branch/kfdef/kfctl_aws.0.7.0.yaml'
 ```
 
 #### Create environment and local variables
 
 ```
-CLUSTER_NAME=$(eksctl get cluster --output=json | jq '.[0].name' --raw-output)
+AWS_CLUSTER_NAME=$(eksctl get cluster --output=json | jq '.[0].name' --raw-output)
 
-INSTANCE_ROLE_NAME=$(eksctl get iamidentitymapping --cluster ${CLUSTER_NAME} --output=json | jq '.[0].rolearn' --raw-output | sed -e 's/.*\///')
+ROLE_NAME=$(eksctl get iamidentitymapping --cluster ${AWS_CLUSTER_NAME} --output=json | jq '.[0].rolearn' --raw-output | sed -e 's/.*\///')
 ```
 
 {{% notice warning %}}
 Make sure that both environment variables are set before proceeding.
-Confirm by running `echo $CLUSTER_NAME` and `echo $INSTANCE_ROLE_NAME`.
+Confirm by running `echo $AWS_CLUSTER_NAME` and `echo $ROLE_NAME`.
 Make sure that these are not empty.
 {{% /notice %}}
+
+Add your AWS_REGION below:
+```
+export AWS_REGION=us-west-2
+```
 
 Add your S3 bucket name below:
 ```
@@ -42,7 +47,7 @@ export BUCKET_NAME=<your_bucket>
 {{% /notice %}}
 
 ```
-export KF_NAME=${CLUSTER_NAME}
+export KF_NAME=${AWS_CLUSTER_NAME}
 export KF_DIR=$PWD/${KF_NAME}
 ```
 
@@ -52,17 +57,17 @@ We'll edit the configuration with the right names for the cluster and node group
 ```
 mkdir -p ${KF_DIR}
 cd ${KF_DIR}
-kfctl build -V -f ${CONFIG}
+kfctl build -V -f ${CONFIG_URI}
 export CONFIG_FILE=${KF_DIR}/kfctl_aws.0.7.0.yaml
-
 ```
 
 #### Edit the configuration file to include the correct instance role name and cluster name
 ```
-sed -i "s@eksctl-kubeflow-aws-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@$INSTANCE_ROLE_NAME@" ${CONFIG_FILE}
+sed -i .bak "s@cpu-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@$ROLE_NAME@" ${CONFIG_FILE}
 
-sed -i "s@kubeflow-aws@$CLUSTER_NAME@" ${CONFIG_FILE}
+sed -i .bak -e 's/kubeflow-aws/'"$AWS_CLUSTER_NAME"'/' ${CONFIG_FILE}
 
+sed -i .bak "s@us-west-2@$AWS_REGION@" ${CONFIG_FILE}
 ```
 
 #### Apply the changes and deploy Kubeflow

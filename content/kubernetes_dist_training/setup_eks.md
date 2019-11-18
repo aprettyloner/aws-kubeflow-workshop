@@ -16,7 +16,7 @@ You should see the following output
 ```
 Output:
 eksctl create cluster \
-    --name aws-tf-cluster-cpu \
+    --name cpu \
     --version 1.14 \
     --region us-west-2 \
     --nodegroup-name cpu-nodes \

@@ -13,7 +13,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-d
 
 
 ```
-VPC_ID=$(aws ec2 describe-vpcs --filters "Name=tag:Name,Values=eksctl-${CLUSTER_NAME}-cluster/VPC" --query "Vpcs[0].VpcId" --output text)
+VPC_ID=$(aws ec2 describe-vpcs --filters "Name=tag:Name,Values=eksctl-${AWS_CLUSTER_NAME}-cluster/VPC" --query "Vpcs[0].VpcId" --output text)
 ```
 
 #### Get subnet ID from the EC2 console

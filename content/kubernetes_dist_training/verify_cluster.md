@@ -8,10 +8,10 @@ Once the cluster is up and running, you should see a message that your cluster i
 ![verify eks](/images/eks/verify_eks.png)
 
 Update kubeconfig file to point to our new cluster.
-If you chose a different name for you cluster (other than aws-tf-cluster-cpu) then be sure to include the name of your cluster below.
+If you chose a different name for you cluster (other than cpu) then be sure to include the name of your cluster below.
 
 ```
-aws eks --region us-west-2 update-kubeconfig --name aws-tf-cluster-cpu
+aws eks --region us-west-2 update-kubeconfig --name cpu
 ```
 
 Run the following to confirm that you can access the EKS cluster:
