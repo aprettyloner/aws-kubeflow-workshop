@@ -27,7 +27,7 @@ Replace with `Dockerfile.gpu` if you're going to be running training on a GPU cl
 
 * Navigate to [ECR and create a new repository](https://console.aws.amazon.com/ecr/home)
 * Click create repository
-* Provide a repository name
+* Provide the following repository name:  `tfworld2019`
 * Click create
 
 {{% notice tip %}}
