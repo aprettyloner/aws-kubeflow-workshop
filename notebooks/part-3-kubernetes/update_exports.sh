@@ -2,9 +2,6 @@ echo "export AWS_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
 
 echo "export BUCKET_NAME=${BUCKET_NAME}" | tee -a ~/.bash_profile
 
-AWS_CLUSTER_NAME=$(eksctl get cluster --output=json | jq '.[0].name' --raw-output)
-echo "export AWS_CLUSTER_NAME=${AWS_CLUSTER_NAME}" | tee -a ~/.bash_profile
-
 STACK_NAME=$(eksctl get nodegroup --cluster ${AWS_CLUSTER_NAME} -o json | jq -r '.[].StackName')
 echo "export STACK_NAME=${STACK_NAME}" | tee -a ~/.bash_profile
 

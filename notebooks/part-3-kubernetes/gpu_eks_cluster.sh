@@ -1,5 +1,5 @@
 eksctl create cluster \
-    --name gpu \
+    --name ${AWS_CLUSTER_NAME} \
     --version 1.14 \
     --region us-west-2 \
     --nodegroup-name gpu-nodes \
