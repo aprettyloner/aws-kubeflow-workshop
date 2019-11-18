@@ -32,7 +32,7 @@ import sagemaker
 
 sagemaker_session = sagemaker.Session()
 role = sagemaker.get_execution_role()
-bucket_name = 'tfworld2019-<your_bucket_name>'
+bucket_name = 'tf-world-2019-<your_bucket_name>'
 ```
 
 **Step 2:** Specify hyperparameters, instance type and number of instances to distribute training to. The `hvd_processes_per_host` corrosponds to number of GPUs per instances.
@@ -119,7 +119,7 @@ estimator_hvd.fit({'train': train_path,'validation': val_path,'eval': eval_path}
 !S3_REGION=us-west-2 tensorboard --logdir s3://{bucket_name}/tensorboard_logs/
 ```
 
-Open a new browser tan and navigate to the folloiwng link to access TensorBoard:
-<br> https://tfworld2019.notebook.us-west-2.sagemaker.aws/proxy/6006/
+Open a new browser tab and navigate to the folloiwng link to access TensorBoard:
+<br> https://<your-url>.notebook.us-west-2.sagemaker.aws/proxy/6006/
 <br> Make sure that the name of the notebook instance is correct in the link above.
 <br> Don't forget the slash at the end of the URL 6006/
