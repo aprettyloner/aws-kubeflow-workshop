@@ -83,3 +83,8 @@ Monitor changes by running kubectl get all namespaces command.
 ```
 kubectl -n kubeflow get all
 ```
+
+#### Delete the usage reporting beacon
+```
+kubectl delete -n kubeflow deploy spartakus-volunteer
+```
