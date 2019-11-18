@@ -3,7 +3,7 @@ eksctl create cluster \
     --version 1.14 \
     --region us-west-2 \
     --nodegroup-name gpu-nodes \
-    --node-type p3.2xlarge \
+    --node-type p2.xlarge \
     --nodes 2 \
     --node-volume-size 100 \
     --node-zones us-west-2a \
