@@ -12,6 +12,8 @@ spec:
       postStart:
         exec:
           command: ["amazon-linux-extras", "install", "lustre2.10", "-y"]
+# Note:  This `lfs` command doesn't work.  `Operation not allowed`.  And `sudo not found`.
+#        But here is more info:  https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html
       preStop:
         exec:
           command: ["lfs", "hsm_archive", "/data/out.txt"]
