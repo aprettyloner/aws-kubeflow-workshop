@@ -52,3 +52,11 @@ You should an output that something similar to this.
 ![eks output](/images/eks/eksctl_launch.png)
 
 Creating a cluster may take about 15 mins. You could head over to [AWS cloud formation console](https://console.aws.amazon.com/cloudformation) to monitor the progress.
+
+### Associated IAM and OIDC
+To use IAM roles for service accounts in your cluster, you must create an OIDC identity provider in the IAM console.  See https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html for more info.
+```
+aws eks describe-cluster --name ${AWS_CLUSTER_NAME} --query "cluster.identity.oidc.issuer" --output text
+
+eksctl utils associate-iam-oidc-provider --cluster ${AWS_CLUSTER_NAME} --approve
+```
