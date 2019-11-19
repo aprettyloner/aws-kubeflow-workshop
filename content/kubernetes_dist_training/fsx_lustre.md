@@ -33,15 +33,6 @@ export SECURITY_GROUP_ID=$(aws ec2 create-security-group --group-name eks-fsx-se
 echo "export SECURITY_GROUP_ID=${SECURITY_GROUP_ID}" | tee -a ~/.bash_profile
 ```
 
-{{% notice warning %}}
-**Stop:** Make sure that the security group was created before proceeding.
-Confirm by running the following:
-```
-echo $SECURITY_GROUP_ID
-````
-and don't proceed if this is empty.
-{{% /notice %}}
-
 #### Add an ingress rule that opens up port 988 from the 192.168.0.0/16 CIDR range
 ```
 aws ec2 authorize-security-group-ingress --group-id ${SECURITY_GROUP_ID} --protocol tcp --port 988 --cidr 192.168.0.0/16
@@ -52,7 +43,7 @@ Running envsubst will populate SUBNET_ID, SECURITY_GROUP_ID, BUCKET_NAME
 ```
 cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
 
-sed "s@SUBNET_ID@$SUBNET_ID@" specs/fsx-s3-sc.yaml.template > fsx-s3-sc.yaml
+sed "s@SUBNET_ID@$SUBNET_ID@" specs/fsx-s3-sc.yaml.template > specs/fsx-s3-sc.yaml
 sed -i .bak "s@SECURITY_GROUP_ID@$SECURITY_GROUP_ID@" specs/fsx-s3-sc.yaml 
 sed -i .bak "s@BUCKET_NAME@$BUCKET_NAME@" specs/fsx-s3-sc.yaml
 

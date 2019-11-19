@@ -29,11 +29,11 @@ These policies were automatically added to the node IAM roles, but we'll need to
 
 * Copy the role associated with the worker instances
 ```
-echo $ROLE_NAME
+echo $INSTANCE_ROLE_NAME
 ```
 * Navigate to IAM console
 * Click on Roles on the left pane
-* Search for the output of `echo $ROLE_NAME`
+* Search for the output of `echo $INSTANCE_ROLE_NAME`
 * Delete the two inline policies.
  * `iam_alb_ingress_policy`
  * `iam_csi_fsx_policy`

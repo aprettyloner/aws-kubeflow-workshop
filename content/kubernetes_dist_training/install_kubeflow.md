@@ -43,9 +43,6 @@ echo "export INSTANCE_ROLE_NAME=${INSTANCE_ROLE_NAME}" | tee -a ~/.bash_profile
 export INSTANCE_PROFILE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_NAME | jq -r '.Stacks[].Outputs[] | select(.OutputKey=="InstanceProfileARN") | .OutputValue')
 echo "export INSTANCE_PROFILE_ARN=${INSTANCE_PROFILE_ARN}" | tee -a ~/.bash_profile
 
-export ROLE_NAME=$(eksctl get iamidentitymapping --cluster ${AWS_CLUSTER_NAME} --output=json | jq '.[0].rolearn' --raw-output | sed -e 's/.*\///')
-echo "export ROLE_NAME=${ROLE_NAME}" | tee -a ~/.bash_profile
-
 export KF_NAME=${AWS_CLUSTER_NAME}
 echo "export KF_NAME=${KF_NAME}" | tee -a ~/.bash_profile
 
@@ -66,7 +63,7 @@ curl -O ${CONFIG_URI}
 
 export CONFIG_FILE=${KF_DIR}/kfctl_aws.0.7.0.yaml
 
-sed -i .bak "s@eksctl-kubeflow-aws-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@$ROLE_NAME@" ${CONFIG_FILE}
+sed -i .bak "s@eksctl-kubeflow-aws-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@$INSTANCE_ROLE_NAME@" ${CONFIG_FILE}
 sed -i .bak -e 's/kubeflow-aws/'"$AWS_CLUSTER_NAME"'/' ${CONFIG_FILE}
 sed -i .bak "s@us-west-2@$AWS_REGION@" ${CONFIG_FILE}
 
