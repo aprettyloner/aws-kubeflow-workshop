@@ -6,16 +6,13 @@ weight: 3
 
 Navigate to ***aws-kubeflow-workshop > notebooks > part-3-sagemaker***
 
-Setup `AWS_REGION`, `AWS_CLUSTER_NAME`, and `BUCKET_NAME`
+Setup `AWS_REGION`, `AWS_CLUSTER_NAME`
 ```bash
 export AWS_REGION=us-west-2
 echo "export AWS_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
 
 export AWS_CLUSTER_NAME=pipelineai
 echo "export AWS_CLUSTER_NAME=${AWS_CLUSTER_NAME}" | tee -a ~/.bash_profile
-
-export BUCKET_NAME=pipeline.ai
-echo "export BUCKET_NAME=${BUCKET_NAME}" | tee -a ~/.bash_profile
 ````
 
 The `cpu_eks_cluster.sh` and `gpu_eks_cluster.sh` files include the necessary options to lauch a CPU or GPU cluster. Take a look at the options by running the following script to launch an EKS clusters

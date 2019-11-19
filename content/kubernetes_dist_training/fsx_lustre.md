@@ -39,7 +39,12 @@ aws ec2 authorize-security-group-ingress --group-id ${SECURITY_GROUP_ID} --proto
 ```
 
 #### Update the environment variables in the storage class spec file
-Running envsubst will populate SUBNET_ID, SECURITY_GROUP_ID, BUCKET_NAME
+```
+export BUCKET_NAME=aws-kubeflow-workshop
+echo "export BUCKET_NAME=${BUCKET_NAME}" | tee -a ~/.bash_profile
+```
+
+Populate SUBNET_ID, SECURITY_GROUP_ID, BUCKET_NAME
 ```
 cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
 
@@ -54,6 +59,7 @@ sed -i .bak "s@BUCKET_NAME@$BUCKET_NAME@" specs/fsx-s3-sc.yaml
 ```
 export POLICY_ARN=$(aws iam create-policy --policy-name fsx-csi --policy-document file://./specs/fsx_lustre_policy.json --query "Policy.Arn" --output text)
 echo "export POLICY_ARN=${POLICY_ARN}" | tee -a ~/.bash_profile
+
 aws iam attach-role-policy --policy-arn ${POLICY_ARN} --role-name ${INSTANCE_ROLE_NAME}
 ```
 
@@ -61,8 +67,8 @@ aws iam attach-role-policy --policy-arn ${POLICY_ARN} --role-name ${INSTANCE_ROL
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/deploy/kubernetes/manifest.yaml
 
-kubectl apply -f specs/fsx-s3-sc.yaml
-kubectl apply -f specs/fsx-s3-pvc.yaml
+kubectl create -f specs/fsx-s3-sc.yaml
+kubectl create -f specs/fsx-s3-pvc.yaml
 ```
 
 You can check the status by running the following command. Hit `Ctrl+C` if you don't want the terminal to be blocked. To manually check, run the command without `-w`

@@ -19,18 +19,6 @@ echo "export CONFIG_URI=${CONFIG_URI}" | tee -a ~/.bash_profile
 ```
 
 #### Create environment and local variables
-{{% notice warning %}}
-Make sure that environment variables are set before proceeding.
-
-Confirm by running the following commands
-```
-echo $AWS_CLUSTER_NAME
-```
-```
-echo $BUCKET_NAME
-```
-and make sure these are not empty.
-{{% /notice %}}
 ```
 # AWS_CLUSTER_NAME=$(eksctl get cluster --output=json | jq '.[0].name' --raw-output)
 
@@ -73,7 +61,6 @@ kfctl build -V -f ${CONFIG_FILE}
 #### Apply the changes and deploy Kubeflow
 ```
 cd ${KF_DIR}
-#rm -rf kustomize/
 kfctl apply -V -f ${CONFIG_FILE}
 ```
 
