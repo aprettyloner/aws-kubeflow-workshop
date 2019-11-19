@@ -10,15 +10,21 @@ date: 2019-10-31T23:12:17-07:00
 kubectl delete MPIJobs --all
 ```
 
+#### Delete all workflows and pipelines
+```
+kubectl delete workflow --all
+```
+
 #### Delete StorageClass, PersistentVolumeClaim and FSx for Lustre CSI Driver
 {{% notice tip %}}
 Note: This will automatically delete the FSx for luster file system. Your files are safe in Amazon S3.
 {{% /notice %}}
 ```
-kubectl delete -f specs/storage-class-fsx-s3.yaml
-kubectl delete -f specs/claim-fsx-s3.yaml
+kubectl delete -f specs/fsx-s3-sc.yaml
+kubectl delete -f specs/fsx-s3-pvc.yaml
 kubectl delete -f https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/deploy/kubernetes/manifest.yaml
 ```
+
 #### Delete security group
 ```
 aws ec2 delete-security-group --group-id ${SECURITY_GROUP_ID}
@@ -53,7 +59,4 @@ Login into the SageMaker console and click dashboard
 Make sure that you don't have any resources that are **Green** as shown below. Click on the resources that is shown as green and either stop or delete them.
 
 ![sm_dashboard](/images/cleanup/sm_cleanup.png)
-
-## Other resources
-It's always good idea to ensure that:
 

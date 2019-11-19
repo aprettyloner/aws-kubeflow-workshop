@@ -71,7 +71,12 @@ Monitor changes by running kubectl get all namespaces command.
 kubectl -n kubeflow get all
 ```
 
+#### Change to `kubeflow` namespace
+```
+kubectl config set-context --current --namespace=kubeflow
+```
+
 #### Delete the usage reporting beacon
 ```
-kubectl delete -n kubeflow deploy -l app=spartakus
+kubectl delete deploy -l app=spartakus
 ```
