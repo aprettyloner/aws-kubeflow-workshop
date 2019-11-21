@@ -1,3 +1,5 @@
 #pipelineai/
+kustomize/
+.cache/
 fsx-s3-sc.yaml
 *.bak

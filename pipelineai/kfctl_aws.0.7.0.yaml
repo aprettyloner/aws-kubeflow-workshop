@@ -295,15 +295,10 @@ spec:
     spec:
       auth:
         cognito:
+          certArn: arn:aws:acm:us-west-2:954636985443:certificate/6799d486-51de-44f9-a7bb-b98321d70869
+          cognitoAppClientId: 6iu3uodpm5o96faluoavgl8isb
           cognitoUserPoolArn: arn:aws:cognito-idp:us-west-2:954636985443:userpool/us-west-2_FPj1lYYSn
-          cognitoAppClientId: 6iu3uodpm5o96faluoavgl8isb 
-          cognitoUserPoolDomain: PipelineAI 
-          certArn: arn:aws:acm:us-west-2:954636985443:certificate/6799d486-51de-44f9-a7bb-b98321d70869 
-#      auth:
-#        basicAuth:
-#          password:
-#            name: password
-#          username: admin
+          cognitoUserPoolDomain: PipelineAI
       region: us-west-2
       roles:
       - eksctl-pipelineai-nodegroup-cpu-n-NodeInstanceRole-1N19MJ9FWSBS8

@@ -71,12 +71,24 @@ Monitor changes by running kubectl get all namespaces command.
 kubectl -n kubeflow get all
 ```
 
+#### Delete the usage reporting beacon
+```
+kubectl delete all -l app=spartakus --namespace=kubeflow
+```
+
 #### Change to `kubeflow` namespace
 ```
 kubectl config set-context --current --namespace=kubeflow
 ```
 
-#### Delete the usage reporting beacon
+#### Navigate to the Kubeflow Dashboard
+Copy the value in the ADDRESS below.
 ```
-kubectl delete deploy -l app=spartakus
+kubectl get ingress -n istio-system
+
+### EXPECTED OUTPUT ###
+NAME            HOSTS   ADDRESS                                                                  PORTS   AGE
+istio-ingress   *       <some-long-subdomain-name>.<aws-region>.elb.amazonaws.com   80      3m44s
 ```
+
+Note:  DNS is eventually consistent and will take a few minutes to propagate.  Please be patient if you see a 404 in your browser.  It will take a few minutes!
