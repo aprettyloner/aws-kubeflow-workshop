@@ -63,13 +63,12 @@ data:
           accessModes:
             # The Access Mode of the Workspace Volume
             # Supported values: 'ReadWriteOnce', 'ReadWriteMany', 'ReadOnlyMany'
-            value: ReadWriteMany
+            value: ReadWriteOnce
           class:
             # The StrageClass the PVC will use if type is New. Special values are:
             # {none}: default StorageClass
             # {empty}: empty string ""
-            # value: '{none}'
-            value: 'fsx-sc'
+            value: '{none}'
         readOnly: false
       dataVolumes:
         # List of additional Data Volumes to be attached to the user's Notebook
