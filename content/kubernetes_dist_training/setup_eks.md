@@ -13,7 +13,7 @@ echo "export AWS_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
 
 export AWS_CLUSTER_NAME=pipelineai
 echo "export AWS_CLUSTER_NAME=${AWS_CLUSTER_NAME}" | tee -a ~/.bash_profile
-````
+```
 
 Run the following:
 ```bash
