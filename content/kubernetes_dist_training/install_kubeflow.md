@@ -89,7 +89,7 @@ kubectl config set-context --current --namespace=kubeflow
 #### Navigate to the Kubeflow Dashboard
 Note:  DNS is eventually consistent and will take a few minutes to propagate.  Please be patient if you see a 404 in your browser.  It will take a few minutes!
 ```bash
-kubectl get ingress -n istio-system -o jsonpath='{.items[0].status.loadBalancer.ingress[0].hostname}'
+echo $(kubectl get ingress -n istio-system -o jsonpath='{.items[0].status.loadBalancer.ingress[0].hostname}')
 
 ### EXPECTED OUTPUT ###
 <some-long-subdomain-name>.<aws-region>.elb.amazonaws.com 
