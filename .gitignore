@@ -3,3 +3,5 @@
 .cache/
 fsx-s3-sc.yaml
 *.bak
+trust.json
+installer.yaml

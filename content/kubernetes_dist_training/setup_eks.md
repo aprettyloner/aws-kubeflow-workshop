@@ -40,7 +40,36 @@ Creating a cluster may take about 15 mins. You could head over to [AWS cloud for
 ### Associated IAM and OIDC
 To use IAM roles for service accounts in your cluster, you must create an OIDC identity provider in the IAM console.  See https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html for more info.
 ```
-aws eks describe-cluster --name ${AWS_CLUSTER_NAME} --query "cluster.identity.oidc.issuer" --output text
-
 eksctl utils associate-iam-oidc-provider --cluster ${AWS_CLUSTER_NAME} --approve
+
+aws eks describe-cluster --name ${AWS_CLUSTER_NAME} --region ${AWS_REGION} --query "cluster.identity.oidc.issuer" --output text
+```
+
+Follow the instructions here to setup the SageMaker Kubernetes Operator:  
+
+https://sagemaker.readthedocs.io/en/stable/amazon_sagemaker_operators_for_kubernetes.html#create-an-iam-role
+
+```
+aws iam create-role --role-name SageMakerOperatorRole --assume-role-policy-document file://trust.json --output=text
+```
+```
+aws iam attach-role-policy --role-name SageMakerOperatorRole  --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+```
+
+```
+export os="linux" # or "darwin" for mac os
+
+curl -O https://amazon-sagemaker-operator-for-k8s-us-east-1.s3.amazonaws.com/kubectl-smlogs-plugin/latest/${os}.amd64.tar.gz
+
+tar xvzf ${os}.amd64.tar.gz
+
+mkdir ~/sagemaker-k8s-bin
+
+cp ./kubectl-smlogs.${os}.amd64/kubectl-smlogs ~/sagemaker-k8s-bin/.
+
+echo 'export PATH=$PATH:~/sagemaker-k8s-bin' >> ~/.bash_profile
+
+source ~/.bash_profile
+
+
 ```
