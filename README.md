@@ -8,6 +8,7 @@
 * [Website](https://aws.pipeline.ai)
 
 ### Acknowledgements
-This workshop is based on these 2 github repos: 
+This workshop is based on these github repos: 
 * https://github.com/shashankprasanna/distributed-training-workshop/
 * https://github.com/aws-samples/eks-workshop/
+* https://github.com/PipelineAI/pipeline
