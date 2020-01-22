@@ -2,7 +2,7 @@
 title: "Cleanup"
 date: 2019-10-27T15:25:09-07:00
 chapter: true
-weight: 6
+weight: 10 
 ---
 
 # Clean up resources
