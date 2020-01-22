@@ -9,8 +9,8 @@ This repository contains code, webpages and config files accompanying the AWS Di
 
 Slides
 
-* [Part 1: SageMaker)](static/tf-world-distributed-training-workshop.pdf)
-* [Part 2: Kubeflow](static/tf-world-distributed-training-workshop.pdf)
+* [Part 1: SageMaker](static/tf-world-distributed-training-workshop.pdf)
+* [Part 2: EKS + Kubeflow](static/tf-world-distributed-training-workshop.pdf)
 
 Workshop
 
