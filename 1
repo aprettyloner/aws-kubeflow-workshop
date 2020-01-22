@@ -4,14 +4,14 @@ date: 2019-10-28T15:14:12-07:00
 weight: 3
 ---
 
-Navigate to ***aws-kubeflow-workshop > notebooks > part-3-kubernetes***
+Navigate to ***aws-kubeflow-workshop > notebooks > part-3-sagemaker***
 
 Setup `AWS_REGION`, `AWS_CLUSTER_NAME`
 ```bash
 export AWS_REGION=us-west-2
 echo "export AWS_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
 
-export AWS_CLUSTER_NAME=pipelineai
+export AWS_CLUSTER_NAME=workshop
 echo "export AWS_CLUSTER_NAME=${AWS_CLUSTER_NAME}" | tee -a ~/.bash_profile
 ```
 
@@ -20,15 +20,14 @@ Run the following:
 eksctl create cluster \
     --name ${AWS_CLUSTER_NAME} \
     --version 1.14 \
-    --region ${AWS_REGION} \
+    --region us-west-2 \
     --nodegroup-name cpu-nodes \
     --node-type c5.xlarge \
-    --nodes 5 \
+    --nodes 2 \
     --node-volume-size 100 \
     --node-zones us-west-2a \
     --timeout=40m \
     --zones=us-west-2a,us-west-2b,us-west-2c \
-    --alb-ingress-access \
     --auto-kubeconfig
 ```
 
