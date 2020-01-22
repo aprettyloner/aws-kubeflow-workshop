@@ -9,10 +9,11 @@ You should see the following files:
 
 ```bash
 part-2-sagemaker/
-├── cifar10-sagemaker-distributed.ipynb
-└── code
-    ├── cifar10-multi-gpu-horovod-sagemaker.py
-    └── model_def.py
+├──horovod
+   ├── cifar10-sagemaker-distributed.ipynb
+   └── code
+       ├── cifar10-multi-gpu-horovod-sagemaker.py
+       └── model_def.py
 ```
 
 |Files/directories|Description|
