@@ -1,19 +1,13 @@
+## AWS Kubeflow Workshop 
 
-# AWS Kubeflow Workshop 
-
-<hr>
-This repository contains code, webpages and config files accompanying the AWS Distributed Training Workshop based on these 2 github repos: 
-
-* https://github.com/shashankprasanna/distributed-training-workshop
-* https://github.com/aws-samples/eks-workshop/
-
-Slides
-
+### Slides
 * [Part 1: SageMaker](static/tf-world-distributed-training-workshop.pdf)
 * [Part 2: EKS + Kubeflow](static/tf-world-distributed-training-workshop.pdf)
 
-Workshop
-
+### Workshop
 * [Website](https://aws.pipeline.ai)
 
-
+### Acknowledgements
+This workshop is based on these 2 github repos: 
+* https://github.com/shashankprasanna/distributed-training-workshop
+* https://github.com/aws-samples/eks-workshop/
