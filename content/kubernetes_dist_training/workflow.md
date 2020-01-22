@@ -32,10 +32,10 @@ part-3-kubernetes/
 
 ![workflow](/images/eks/workflow.png)
 
-We'll need to first setup Amazon EKS, Amazon FSx for Lustre file  system and install Kubeflow. This involves multiple steps and we'll leverage various CLI tools to to help install, configure and interact with EKS. At a high level, we'll perform the following steps:
+In the next section, we will setup Amazon EKS, Amazon FSx for Lustre file  system and install Kubeflow. This involves multiple steps and we'll leverage various CLI tools to to help install, configure and interact with EKS. At a high level, we'll perform the following steps:
 
 1. Install `eksctl` CLI and use it to launch an Amazon EKS cluster
-1. Install `kubectl CLI to interact with the Amazon EKS cluster
+1. Install `kubectl` CLI to interact with the Amazon EKS cluster
 1. Install `kfctl` CLI and use it to configure and install Kubeflow
-1. Allow Amazon EKS to access Amazon FSx for Lustre file system that's linked to an Amazon S3 bucket
+1. Allow Amazon EKS to access a distributed file system backed by our Amazon S3 bucket
 1. Finally, launch a distributed training job
