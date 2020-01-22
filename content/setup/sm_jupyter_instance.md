@@ -22,7 +22,7 @@ weight: 2
 * From the Amazon SageMaker > Notebook instances page, select Create notebook instance.
 ![Launch notebook instance 2](/images/setup/setup_create_notebook.png)
 * In the Notebook instance name text box, enter a name for the notebook instance.
- * For this workshop select **"tfworld2019"** as the instance name
+ * For this workshop select **"awseksworkshop"** as the instance name
  * Choose ml.c5.xlarge. We'll only be using this instance to launch jobs. The training job themselves will run either on a SageMaker managed cluster or an Amazon EKS cluster
  * Volume size 50 - this is only needed for building docker containers. During training data is copied directly from Amazon S3 to the training cluster when using SageMaker. When using Amazon EKS, we'll setup an FSx for lustre file system that worker nodes will use to get access to training data.
 ![Fill notebook instance](/images/setup/setup_fill_notebook.png)

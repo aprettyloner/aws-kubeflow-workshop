@@ -12,9 +12,8 @@ The ***cifar10-sagemaker-distributed.ipynb*** notebook will automatically start 
 !S3_REGION=us-west-2 tensorboard --logdir s3://{bucket_name}/tensorboard_logs/
 ```
 
-Navigate to https://tfworld2019.notebook.us-west-2.sagemaker.aws/proxy/6006/
+Navigate to https://awseksworkshop.notebook.us-west-2.sagemaker.aws/proxy/6006/
 
-Replace `tfworld2019` with the name of your Jupyter notebook instance.
 ![tensorboard](/images/sagemaker/tensorboard.png)
 
 ### Monitoring training job status on the AWS SageMaker console
