@@ -27,7 +27,7 @@ part-3-kubernetes/
 |-----|-----|
 |Dockerfile | Use this build a custom container image for training on Amazon EKS|
 |cpu_eks_cluster.sh, gpu_eks_cluster.sh |shell scripts using `eksctl` CLI tool to launch an Amazon EKS cluster|
-|code|Contains the training scrip and other training script dependencies|
+|code|Contains the training script and other training script dependencies|
 |specs|List of spec files required to configure Kubeflow|
 
 ![workflow](/images/eks/workflow.png)

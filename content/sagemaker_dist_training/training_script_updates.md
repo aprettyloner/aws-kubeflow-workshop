@@ -4,7 +4,7 @@ date: 2019-10-28T13:42:13-07:00
 weight: 2
 ---
 
-There are few minor changes required to run a training script on Amazon Sagemaker
+There are few minor changes required to run a training script on Amazon Sagemaker.  We have already made these changes in the notebooks provided in this section, but we highlight them below.
 
 
 ##### SageMaker hyperparameters
@@ -38,9 +38,9 @@ parser.add_argument('--eval',             type=str,   default=os.environ['SM_CHA
 args = parser.parse_args()
 ```
 
-##### (Optional) TensorBoard callback for real-time monitoring of training
+##### Log to TensorBoard for real-time monitoring of training
 * Using a keras callback we can upload tensorboard files to Amazon S3 so that we can monitor progress in real-time.
-tensorboard already comes installed on the SageMaker JupyterLab instance, and has support for reading event files from Amazon S3.
+tensorboard already comes installed on the SageMaker Jupyter instance, and has support for reading event files from Amazon S3.
 
 `tensorboard --logdir s3://{bucket_name}/tensorboard_logs/`
 

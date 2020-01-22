@@ -10,7 +10,7 @@ weight: 3
 ![sm_notebook](/images/sagemaker/sm_notebook.png)
 
 {{% notice warning %}}
-**Stop:** Do this section on JupyterLab. Below is a copy of the jupyter notebook for reference. <br>
+**Stop:** Do this section on Jupyter. Below is a copy of the jupyter notebook for reference. <br>
 {{% /notice %}}
 
 ----

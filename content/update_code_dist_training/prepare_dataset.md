@@ -5,7 +5,7 @@ weight: 2
 ---
 ### Download the CIFAR10 dataset and upload it to Amazon S3
 
-On a terminal window in JupyterLab client, navigate to the notebook directory
+On a terminal window in Jupyter client, navigate to the notebook directory
 
 ```
 cd ~/SageMaker/aws-kubeflow-workshop/notebooks/
@@ -22,6 +22,7 @@ python generate_cifar10_tfrecords.py --data-dir dataset
 Confirm that the dataset was downloaded successfully. Run:
 ```
 sudo yum install tree -y
+
 tree dataset
 ```
 You should see the following output
@@ -37,13 +38,14 @@ dataset
 
 Create a new S3 bucket and upload the dataset to it. Be sure to add a unique identifier, such as your name.
 ```
-aws s3 mb s3://<your_bucket>
+aws s3 mb s3://<your-globally-unique-bucket-name>
 ```
 {{% notice warning %}}
 **Note:** Bucket names should be unique globally. If a bucket with the same name already exists, add another unique identifier such as today's date or your last name.
 {{% /notice %}}
 
-Proceed only if you don't see an error. Now, upload the dataset to S3
+**Proceed only after successful bucket creation above.**
+
 ```
-aws s3 sync dataset/ s3://<your_bucket>/cifar10-dataset/
+aws s3 sync dataset/ s3://<your-globally-unique-bucket-name>/cifar10-dataset/
 ```

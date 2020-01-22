@@ -18,7 +18,7 @@ part-2-sagemaker/
 |Files/directories|Description|
 |-----|-----|
 |cifar10-sagemaker-distributed.ipynb |This jupyter notebook contains code to define and kick off a SageMaker training job|
-|code |This directory contains the training scrip and other training script dependencies|
+|code |This directory contains the training script and other training script dependencies|
 
 ![sagemaker_workflow](/images/sagemaker/workflow.png)
 
