@@ -1,7 +1,7 @@
 ---
 title: "Download the workshop content"
 date: 2019-10-28T00:14:06-07:00
-weight: 4
+weight: 7 
 ---
 ### Launch JupyterLab client and clone the workshop repository
 * Your notebook instance should now be ready. Click *JupyterLab* to launch your client.

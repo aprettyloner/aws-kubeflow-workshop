@@ -1,7 +1,7 @@
 ---
 title: "Launch a SageMaker notebook instance"
 date: 2019-10-27T22:39:43-07:00
-weight: 2
+weight: 4
 ---
 
 {{% notice info %}}

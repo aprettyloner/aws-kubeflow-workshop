@@ -1,7 +1,7 @@
 ---
 title: "Update notebook IAM role"
 date: 2019-10-27T23:41:36-07:00
-weight: 3
+weight: 5
 ---
 
 ### Give your notebook instances admin privileges
