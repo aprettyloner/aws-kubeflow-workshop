@@ -9,5 +9,5 @@
 
 ### Acknowledgements
 This workshop is based on these 2 github repos: 
-* https://github.com/shashankprasanna/distributed-training-workshop
+* https://github.com/shashankprasanna/distributed-training-workshop/
 * https://github.com/aws-samples/eks-workshop/
