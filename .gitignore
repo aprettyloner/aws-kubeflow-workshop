@@ -5,3 +5,7 @@ fsx-s3-sc.yaml
 *.bak
 trust.json
 installer.yaml
+ckpt_dir/
+dataset/
+.ipynb_checkpoints/
+__pycache__/

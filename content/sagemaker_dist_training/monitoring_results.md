@@ -12,7 +12,7 @@ The ***cifar10-sagemaker-distributed.ipynb*** notebook will automatically start 
 !S3_REGION=us-west-2 tensorboard --logdir s3://{bucket_name}/tensorboard_logs/
 ```
 
-Navigate to https://awseksworkshop.notebook.us-west-2.sagemaker.aws/proxy/6006/
+Navigate to https://workshop.notebook.us-west-2.sagemaker.aws/proxy/6006/
 
 ![tensorboard](/images/sagemaker/tensorboard.png)
 

@@ -14,7 +14,7 @@ Open `cifar10-single-instance.ipynb` and run through the cells. The following no
 ![singe_instance](/images/convert_script/single_instance.png)
 
 {{% notice warning %}}
-**Stop:** Do this section on Jupyter. Below is a copy of the jupyter notebook for reference. <br>
+**Stop:** Do this section in Jupyter. <br>
 {{% /notice %}}
 
 

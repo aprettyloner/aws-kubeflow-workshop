@@ -42,8 +42,6 @@ args = parser.parse_args()
 * Using a keras callback we can upload tensorboard files to Amazon S3 so that we can monitor progress in real-time.
 tensorboard already comes installed on the SageMaker Jupyter instance, and has support for reading event files from Amazon S3.
 
-`tensorboard --logdir s3://{bucket_name}/tensorboard_logs/`
-
 ```
 class Sync2S3(tf.keras.callbacks.Callback):
     def __init__(self, logdir, s3logdir):
