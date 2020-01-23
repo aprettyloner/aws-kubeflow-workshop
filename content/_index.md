@@ -17,3 +17,4 @@ weight: 1
 #### - Outline libraries and tools needed for distributing training workloads on large clusters
 #### - Demonstrate code changes required to go from single-GPU to multi-GPU distributed training
 #### - Apply these skills to create your own deep learning models and containers
+<br>
