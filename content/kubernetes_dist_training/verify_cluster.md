@@ -18,9 +18,8 @@ Run the following to confirm that you can access the EKS cluster:
 You should see a list of kubernetes namespaces:
 ```
 kubectl get ns
-```
-```
-Output:
+
+### EXPECTED OUTPUT ###
 NAME              STATUS   AGE
 default           Active   12m
 kube-node-lease   Active   13m
@@ -31,10 +30,8 @@ kube-system       Active   13m
 You should see total number of nodes in your cluster:
 ```
 kubectl get nodes
-```
-```
-### EXPECTED OUTPUT ###
 
+### EXPECTED OUTPUT ###
 NAME                                            STATUS   ROLES    AGE    VERSION
 ip-XXX-XXX-XXX-XXX.us-west-2.compute.internal  	Ready    <none>   7m3s   v1.14.7-eks-1861c5
 ip-XXX-XXX-XXX-XXX.us-west-2.compute.internal   Ready    <none>   7m4s   v1.14.7-eks-1861c5

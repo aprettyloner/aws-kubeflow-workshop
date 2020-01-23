@@ -6,13 +6,14 @@ weight: 3
 
 Navigate to ***aws-kubeflow-workshop > notebooks > part-3-kubernetes***
 
-Setup `AWS_REGION`, `AWS_CLUSTER_NAME`
+Setup the `AWS_REGION`, `AWS_CLUSTER_NAME` environment variables
 ```bash
 export AWS_REGION=us-west-2
 echo "export AWS_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
 
 export AWS_CLUSTER_NAME=pipelineai
 echo "export AWS_CLUSTER_NAME=${AWS_CLUSTER_NAME}" | tee -a ~/.bash_profile
+
 ```
 
 Run the following:
@@ -30,13 +31,19 @@ eksctl create cluster \
     --zones=us-west-2a,us-west-2b,us-west-2c \
     --alb-ingress-access \
     --auto-kubeconfig
+
 ```
 
 You should an output that something similar to this.
 
 ![eks output](/images/eks/eksctl_launch.png)
 
-Creating a cluster may take about 15 mins. You could head over to [AWS cloud formation console](https://console.aws.amazon.com/cloudformation) to monitor the progress.
+Creating a cluster may take about 15 mins. 
+
+Navigate to the [**AWS Console**](https://console.aws.amazon.com) to monitor the progress:
+```
+https://console.aws.amazon.com/cloudformation
+```
 
 ### Associated IAM and OIDC
 To use IAM roles for service accounts in your cluster, you must create an OIDC identity provider in the IAM console.  See https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html for more info.
@@ -44,33 +51,5 @@ To use IAM roles for service accounts in your cluster, you must create an OIDC i
 eksctl utils associate-iam-oidc-provider --cluster ${AWS_CLUSTER_NAME} --approve
 
 aws eks describe-cluster --name ${AWS_CLUSTER_NAME} --region ${AWS_REGION} --query "cluster.identity.oidc.issuer" --output text
-```
-
-Follow the instructions here to setup the SageMaker Kubernetes Operator:  
-
-https://sagemaker.readthedocs.io/en/stable/amazon_sagemaker_operators_for_kubernetes.html#create-an-iam-role
-
-```
-aws iam create-role --role-name SageMakerOperatorRole --assume-role-policy-document file://trust.json --output=text
-```
-```
-aws iam attach-role-policy --role-name SageMakerOperatorRole  --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
-```
-
-```
-export os="linux" # or "darwin" for mac os
-
-curl -O https://amazon-sagemaker-operator-for-k8s-us-east-1.s3.amazonaws.com/kubectl-smlogs-plugin/latest/${os}.amd64.tar.gz
-
-tar xvzf ${os}.amd64.tar.gz
-
-mkdir ~/sagemaker-k8s-bin
-
-cp ./kubectl-smlogs.${os}.amd64/kubectl-smlogs ~/sagemaker-k8s-bin/.
-
-echo 'export PATH=$PATH:~/sagemaker-k8s-bin' >> ~/.bash_profile
-
-source ~/.bash_profile
-
 
 ```
