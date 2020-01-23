@@ -32,7 +32,7 @@ Change the CPU value to **1.0**:
 
 Scroll to the bottom, take all other defaults, and click on **LAUNCH**.
 
-It takes a few seconds for the Jupyter notebook to come online. Click on **CONNECT**
+It takes a couple minutes for the first Jupyter notebook to come online. Click on **CONNECT**
 
 ![dashboard](/images/kubeflow/jupyter-notebook-servers.png)
 
@@ -48,7 +48,7 @@ This creates an empty Python 3 Jupyter notebook
 
 ![dashboard](/images/kubeflow/jupyter-empty-notebook.png)
 
-Copy the [sample training code](/advanced/420_kubeflow/kubeflow.files/mnist-tensorflow-jupyter.py) and paste it in the first code block. This Python sample code uses TensorFlow to create a training model for MNIST database. Click on **Run** to load this code in notebook.
+Copy the [sample training code](kubeflow.files/mnist-tensorflow-jupyter.py) and paste it in the first code block. This Python sample code uses TensorFlow to create a training model for MNIST database. Click on **Run** to load this code in notebook.
 
 ![dashboard](/images/kubeflow/jupyter-mnist-code.png)
 
