@@ -80,6 +80,8 @@ sed -i.bak "s@us-west-2@$AWS_REGION@" ${CONFIG_FILE}
 ```bash
 cd ${KF_DIR}
 
+rm -rf kustomize
+
 kfctl build -V -f ${CONFIG_FILE}
 
 ```
@@ -125,3 +127,15 @@ echo $(kubectl get ingress -n istio-system -o jsonpath='{.items[0].status.loadBa
 ```
 
 Navigate to the link above ^^.  Please be patient.  DNS takes time to propagate.
+
+![dashboard](/images/kubeflow/dashboard-welcome.png)
+
+Click on `Start Setup`.
+
+Specify the namespace as `workshop`.
+
+![dashboard](/images/kubeflow/dashboard-create-namespace.png)
+
+Click `Finish` to view the dashboard
+
+![dashboard](/images/kubeflow/dashboard-first-look.png)
