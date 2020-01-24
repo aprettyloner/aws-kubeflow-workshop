@@ -60,8 +60,10 @@ Login Succeeded
 ```
 
 * Push your image to ECR
+
 ```
 docker push ${ECR_REPOSITORY_URI}:latest
+```
 
 {{% notice tip %}}
 What happened?
