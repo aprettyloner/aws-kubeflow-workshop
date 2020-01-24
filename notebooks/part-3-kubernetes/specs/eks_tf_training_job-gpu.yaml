@@ -40,7 +40,7 @@ spec:
         - NCCL_DEBUG=INFO
         - python
         - cifar10-multi-gpu-horovod.py
-        - --epochs=30
+        - --epochs=10
         - --learning-rate=0.01
         - --batch-size=256
         - --weight-decay=0.0002
