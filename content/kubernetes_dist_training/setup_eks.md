@@ -60,7 +60,7 @@ https://console.aws.amazon.com/cloudformation
 Wait until the EKS cluster is succesfully deployed before you continue.
 
 
-#### Create more environment variables
+### Create more environment variables
 
 ```bash
 export STACK_NAME=$(eksctl get nodegroup --cluster ${AWS_CLUSTER_NAME} -o json | jq -r '.[].StackName')
