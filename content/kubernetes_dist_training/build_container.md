@@ -26,7 +26,7 @@ Replace with `Dockerfile.gpu` if you're going to be running training on a GPU cl
 
 #### Create a new Elastic Container Registry (ECR) repository
 ```
-aws ecr create-repository --repository-name workshop2
+aws ecr create-repository --repository-name workshop
 ```
 
 
