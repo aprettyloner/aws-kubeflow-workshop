@@ -1,10 +1,9 @@
 +++
-title: "Part 4 - Machine Learning with Kubeflow on Amazon EKS"
-date: 2019-10-21T13:21:28-07:00
-weight: 5
-chapter: true
-aliases:
-    - /kubeflow/
+title = "Part 4 - Machine Learning with Kubeflow on Amazon EKS"
+date = 2019-10-21T13:21:28-07:00
+weight = 5
+chapter = true
+#pre = "<b>2. </b>"
 +++
 
 # Part 4 - Machine Learning with Kubeflow on Amazon EKS
