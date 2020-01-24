@@ -150,16 +150,9 @@ opt = SGD(lr=lr, decay=weight_decay, momentum=momentum)
 
 
 ```python
+# Compile model
 model.compile(loss='categorical_crossentropy',
               optimizer=opt,
-              metrics=['accuracy'])
-```
-
-
-```python
-# Compile model
-model.compile(optimizer=SGD(lr=lr, decay=weight_decay, momentum=momentum),
-              loss='categorical_crossentropy',
               metrics=['accuracy'])
 ```
 
