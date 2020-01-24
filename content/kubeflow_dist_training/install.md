@@ -96,14 +96,6 @@ kfctl build -V -f ${CONFIG_FILE}
 ```
 
 
-#### Allow Access from to the Elastic Container Registry (ECR)
-This allows our cluster worker nodes to load custom Docker images (ie. models) from ECR.  We will load these custom Docker images in a later section. 
-
-```bash
-aws iam attach-role-policy --role-name $INSTANCE_ROLE_NAME --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
-```
-
-
 #### Deploy Kubeflow
 ```bash
 cd ${KF_DIR}
