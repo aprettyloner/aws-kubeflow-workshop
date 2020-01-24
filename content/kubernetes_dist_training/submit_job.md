@@ -58,4 +58,4 @@ Epoch 2/30
 Epoch 2/30
 ```
 
-Congratulations!  You are performing a distributed training job using Amazon EKS on a distributed file system backed by S3.  Sweet!
+Congratulations!  You are performing a distributed TensorFlow training job using Horovod on Amazon EKS with a distributed file system backed by S3.  High-five!!
