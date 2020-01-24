@@ -80,8 +80,9 @@ export INSTANCE_PROFILE_ARN=$(aws cloudformation describe-stacks --stack-name $S
 echo "export INSTANCE_PROFILE_ARN=${INSTANCE_PROFILE_ARN}" | tee -a ~/.bash_profile
 ```
 
+#### Allow Access from/to the Elastic Container Registry (ECR)
+This allows our cluster worker nodes to load custom Docker images (ie. models) from ECR.  We will load these custom Docker images in a later section. 
 
-### Add Access to Elastic Container Registry (ECR)
-```
+```bash
 aws iam attach-role-policy --role-name $INSTANCE_ROLE_NAME --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
 ```
