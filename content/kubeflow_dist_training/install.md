@@ -20,24 +20,17 @@ echo "export CONFIG_URI=${CONFIG_URI}" | tee -a ~/.bash_profile
 
 ```
 
-#### Create more environment variables
-```bash
-export STACK_NAME=$(eksctl get nodegroup --cluster ${AWS_CLUSTER_NAME} -o json | jq -r '.[].StackName')
-
-echo "export STACK_NAME=${STACK_NAME}" | tee -a ~/.bash_profile
-```
+#### Check environment variables are set
 
 ```bash
-INSTANCE_ROLE_NAME=$(aws cloudformation describe-stacks --stack-name $STACK_NAME --output text --query "Stacks[0].Outputs[1].OutputValue" | sed -e 's/.*\///g')
-
-echo "export INSTANCE_ROLE_NAME=${INSTANCE_ROLE_NAME}" | tee -a ~/.bash_profile
+echo $AWS_CLUSTER_NAME
+echo $STACK_NAME
+echo $INSTANCE_ROLE_NAME
+echo $INSTANCE_PROFILE_ARN
 ```
 
-```bash
-export INSTANCE_PROFILE_ARN=$(aws cloudformation describe-stacks --stack-name $STACK_NAME | jq -r '.Stacks[].Outputs[] | select(.OutputKey=="InstanceProfileARN") | .OutputValue')
 
-echo "export INSTANCE_PROFILE_ARN=${INSTANCE_PROFILE_ARN}" | tee -a ~/.bash_profile
-```
+#### Set more environment variables 
 
 ```bash
 export KF_NAME=${AWS_CLUSTER_NAME}
