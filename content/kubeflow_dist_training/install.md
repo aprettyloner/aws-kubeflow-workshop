@@ -141,7 +141,7 @@ Navigate to the link above ^^.  Please be patient.  DNS takes time to propagate.
 
 Click on `Start Setup`.
 
-Set the `namespace` to `eksworkshop`.
+Set the `namespace` to `workshop`.
 
 _Note:  If you accidentally use the default `anonymous` namespace, you will be OK.  Please continue._
 
