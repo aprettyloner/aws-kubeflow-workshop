@@ -1,5 +1,5 @@
 +++
-title = "Part 4: Distributed Training with Kubeflow on Amazon EKS"
+title = "Part 4 - Distributed Training with Kubeflow on Amazon EKS"
 date = 2019-10-21T13:21:28-07:00
 weight = 5
 chapter = true
