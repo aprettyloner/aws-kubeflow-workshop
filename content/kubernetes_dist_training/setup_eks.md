@@ -40,7 +40,7 @@ You should an output that something similar to this.
 
 Creating a cluster may take about 15 mins. 
 
-Navigate to the [**AWS Console**](https://console.aws.amazon.com) to monitor the progress:
+Navigate to the [**AWS Console**](https://console.aws.amazon.com/cloudformation) to monitor the progress:
 ```
 https://console.aws.amazon.com/cloudformation
 ```
