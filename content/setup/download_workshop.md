@@ -14,9 +14,7 @@ weight: 7
 
 ```
 bash
-
 cd ~/SageMaker
-
 git clone https://github.com/PipelineAI/aws-kubeflow-workshop.git
 ```
 
@@ -24,5 +22,4 @@ git clone https://github.com/PipelineAI/aws-kubeflow-workshop.git
 ```
 bash
 ls aws-kubeflow-workshop/notebooks
-
 ```
