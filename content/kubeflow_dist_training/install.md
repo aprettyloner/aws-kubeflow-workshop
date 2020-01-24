@@ -30,7 +30,7 @@ echo $INSTANCE_PROFILE_ARN
 ```
 
 
-#### Set more environment variables 
+#### Set Kubeflow environment variables 
 
 ```bash
 export KF_NAME=${AWS_CLUSTER_NAME}
