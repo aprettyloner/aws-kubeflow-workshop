@@ -9,7 +9,7 @@ draft: false
 
 [The Jupyter Notebook](https://jupyter.org/) is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. It is often used for data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and more.
 
-In Kubeflow dashboard, click on **Create a new Notebook server**:
+In the Kubeflow dashboard, click on the "hamburger" menu icon in the upper left.  Then click **Create a new Notebook server**:
 
 ![dashboard](/images/kubeflow/dashboard-new-notebook-server.png)
 

@@ -10,10 +10,10 @@ In our Dockerfile we start with an AWS Deep Learning TensorFlow container and co
 
 ```
 cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
+
 cat Dockerfile.cpu
-```
-`Dockerfile.cpu` Output:
-```
+
+### EXPECTED OUTPUT ###
 FROM 763104351884.dkr.ecr.us-west-2.amazonaws.com/tensorflow-training:1.14.0-cpu-py36-ubuntu16.04
 COPY code /opt/training/
 WORKDIR /opt/training
@@ -24,32 +24,38 @@ Replace with `Dockerfile.gpu` if you're going to be running training on a GPU cl
 {{% /notice %}}
 
 #### Build and push a custom Docker container
+```
+export ECR_REPOSITORY_URI=$(aws ecr describe-repositories --repository-names workshop --query "repositories[].repositoryUri" --output text)
+echo "export ECR_REPOSITORY_URI=${ECR_REPOSITORY_URI}" | tee -a ~/.bash_profile
+```
 
-* Navigate to [ECR and create a new repository](https://console.aws.amazon.com/ecr/home)
-* Click create repository
-* Provide the following repository name:  `awseksworkshop`
-* Click create
+#### Create a new Elastic Container Registry (ECR) repository
 
-{{% notice tip %}}
-By clicking on **View push commands** button below, you can get access to docker build and push commands, so you don't have to remember them.
-{{% /notice %}}
-![create repo](/images/eks/create_repo.png)
-![push commands](/images/eks/push_commands.png)
-#### Create a new Elastic Container Registry repository
-
-* Head over to the terminal on JupyterLab and log-in to the AWS Deep Learning registry
+* Head over to the terminal on JupyterLab and log-in to the AWS Deep Learning registry.  We will extend the base Docker images in this repo.
 ```
 $(aws ecr get-login --no-include-email --region us-west-2 --registry-ids 763104351884)
+
+### EXPECTED OUTPUT ###
+...
+Login Succeeded
 ```
 * Run `docker build` command in **Step 2** from the Docker push commands menu. Make sure to update it with the correct Docker file name for CPU or GPU:
-  * For CPU container: `docker build -t <your_docker_repo_name> -f Dockerfile.cpu .`
-  * For GPU container: `docker build -t <your_docker_repo_name> -f Dockerfile.gpu .`
-* Run the `docker tag` command in **Step 3** from the Docker push commands menu
+```
+docker build -t ${ECR_REPOSITORY_URI}:latest -f Dockerfile.cpu . # <== MAKE SURE YOU INCLUDE THE `.` AT THE END!
+```
 
 * Log in to your docker registry
- * `$(aws ecr get-login --no-include-email --region us-west-2)`
+```
+$(aws ecr get-login --no-include-email --region us-west-2)
 
-* Run `docker push` command in **Step 4** from the Docker push commands menu
+### EXPECTED OUTPUT ###
+...
+Login Succeeded
+```
+
+* Push your image to ECR
+```
+docker push ${ECR_REPOSITORY_URI}:latest
 
 {{% notice tip %}}
 What happened?
