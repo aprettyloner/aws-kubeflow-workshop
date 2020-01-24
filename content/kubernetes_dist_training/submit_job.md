@@ -8,6 +8,15 @@ weight: 8
 cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
 ```
 
+
+#### Install MPIJob operator
+```
+git clone https://github.com/kubeflow/mpi-operator
+cd mpi-operator
+kubectl create -f deploy/mpi-operator.yaml
+```
+
+
 #### Update the MPIJob spec file with your Docker image
 
 ```
