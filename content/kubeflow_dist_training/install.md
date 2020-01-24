@@ -6,7 +6,7 @@ weight: 10
 
 #### Download the `kfctl` CLI tool
 ```bash
-curl --location https://github.com/kubeflow/kfctl/releases/download/v1.0-rc.1/kfctl_v1.0-rc.1-0-g963c787_linux.tar.gz
+curl --location https://github.com/kubeflow/kfctl/releases/download/v1.0-rc.1/kfctl_v1.0-rc.1-0-g963c787_linux.tar.gz | tar xz
 
 sudo mv kfctl /usr/local/bin
 
