@@ -1,7 +1,7 @@
 ---
 title: "Submit distributed training job"
 date: 2019-10-28T17:14:05-07:00
-weight: 8
+weight: 10 
 ---
 #### Confirm that you are in the right directory
 ```

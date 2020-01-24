@@ -10,7 +10,8 @@ You should see the following files:
 
 ```bash
 part-3-kubernetes/
-├── Dockerfile
+├── Dockerfile.cpu
+├── Dockerfile.gpu
 ├── cpu_eks_cluster.sh
 ├── gpu_eks_cluster.sh
 ├── code
