@@ -21,8 +21,7 @@ This pre-populates the namespace field on the dashboard. Specify a name **myjupy
 
 ![dashboard](/images/kubeflow/jupyter-enter-notebook-server-name.png)
 
-In the Image section, select the latest **tensorflow-1.x** image whose name ends
-in **cpu** (not gpu) from the dropbown box:
+In the Image section, specify the custom image `pipelineai/kubeflow-notebook-cpu-1.13.1`
 
 ![dashboard](/images/kubeflow/jupyter-select-image.png)
 

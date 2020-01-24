@@ -72,7 +72,7 @@ sed -i.bak -e "s@eksctl-kubeflow-aws-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@$I
 
 sed -i.bak -e 's/kubeflow-aws/'"$AWS_CLUSTER_NAME"'/' ${CONFIG_FILE}
 
-sed -i.bak "s@us-west-2@$AWS_REGION@" ${CONFIG_FILE}
+sed -i.bak -e "s@us-west-2@$AWS_REGION@" ${CONFIG_FILE}
 
 ```
 
@@ -85,6 +85,15 @@ rm -rf kustomize
 kfctl build -V -f ${CONFIG_FILE}
 
 ```
+
+
+#### Allow Access from to the Elastic Container Registry (ECR)
+This allows our cluster worker nodes to load custom Docker images (ie. models) from ECR.  We will load these custom Docker images in a later section. 
+
+```bash
+aws iam attach-role-policy --role-name $INSTANCE_ROLE_NAME --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
+```
+
 
 #### Deploy Kubeflow
 ```bash

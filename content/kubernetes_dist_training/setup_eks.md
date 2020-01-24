@@ -53,3 +53,8 @@ eksctl utils associate-iam-oidc-provider --cluster ${AWS_CLUSTER_NAME} --approve
 aws eks describe-cluster --name ${AWS_CLUSTER_NAME} --region ${AWS_REGION} --query "cluster.identity.oidc.issuer" --output text
 
 ```
+
+### Add Access to Elastic Container Registry (ECR)
+```
+aws iam attach-role-policy --role-name $INSTANCE_ROLE_NAME --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
+```
