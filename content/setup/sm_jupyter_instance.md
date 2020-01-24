@@ -5,7 +5,7 @@ weight: 4
 ---
 
 {{% notice info %}}
-**Note:** In this workshop, we'll be using an Amazon SageMaker notebook instance for simplicity and convenience. You can use any local client to perform steps detailed in this and subsequent sections. You'll just need to make sure you have the right privileges to access AWS services such as SageMaker, EKS, S3, ECR and others from your clinet. You'll also need to install AWS Command Line Interface (AWS CLI), python, boto3 and SageMaker SDK installed. The SageMaker Jupyter notebook on the other hand is preconfigured and ready to use.
+**Note:** In this workshop, we'll be using an Amazon SageMaker notebook instance for simplicity and convenience. You can use any local client to perform steps detailed in this and subsequent sections. You'll just need to make sure you have the right privileges to access AWS services such as SageMaker, EKS, S3, ECR and others from your client. You'll also need to install AWS Command Line Interface (AWS CLI), python, boto3 and SageMaker SDK installed. The SageMaker Jupyter notebook on the other hand is preconfigured and ready to use.
 {{% /notice %}}
 
 ### Launch an Amazon SageMaker notebook instance
