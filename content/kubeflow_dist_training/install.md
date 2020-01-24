@@ -141,11 +141,9 @@ Navigate to the link above ^^.  Please be patient.  DNS takes time to propagate.
 
 Click on `Start Setup`.
 
-Specify the namespace as `eksworkshop`.
+Set the `namespace` to `eksworkshop`.
 
-__Note:  If you use the default `anonymous` namespace, you will be OK.  Please continue.__
-
-![dashboard](/images/kubeflow/dashboard-create-namespace.png)
+_Note:  If you accidentally use the default `anonymous` namespace, you will be OK.  Please continue._
 
 Click `Finish` to view the dashboard
 

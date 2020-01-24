@@ -6,34 +6,9 @@ draft: false
 ---
 ### Kubeflow Fairing
 
-Jupyter notebooks are a great way to author your model creation. You can write the algorithms, train the model and if you need a way to publish the inference endpoint directly from this interface, you can use Kubeflow fairing to do so
+Jupyter notebooks are a great way to author your model creation. You can write the algorithms, train the model and if you need a way to publish the inference endpoint directly from this interface, you can use Kubeflow fairing to do so.
 
-#### Assign ECR permissions
-
-For this chapter, we will create a training image and store it in ECR. We need to add an IAM policy to Worker nodes so that we can write to ECR. Run below commands in Cloud9 and assign desired permission
-
-```
-aws iam attach-role-policy --role-name $ROLE_NAME --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
-```
-
-#### Create Jupyter notebook server
-Create new notebook server by following [Jupyter notebook chapter] (/advanced/420_kubeflow/jupyter). Before you jump to the link, take a note of custom image (**seedjeffwan/tensorflow-1.13.1-notebook-cpu:awscli-v2**) that you will use for **eks-kubeflow-workshop** notebook server. Below screenshot depicts how to use custom image
-
-![dashboard](/images/kubeflow/eks-kubeflow-workshop-notebook-server.png)
-
-#### Clone the repo
-We will clone Github repo from a Jupyter notebook so that we can readily use authored notebooks in this chapter.
-
-Create new Python 3 Notebook if one doesn't exist. Run the command below to clone the repo
-
-```
-!git clone https://github.com/aws-samples/eks-kubeflow-workshop.git
-```
-Click Run. This will clone the repo into your notebook server
-
-Close the notebook tab, go back to the notebook server, select the notebook that we just used and click **Shutdown**.
-
-![dashboard](/images/kubeflow/fairing-shutdown-notebook.png)
+For this chapter, we will create a training image and store it in ECR. 
 
 #### Run fairing introduction notebook
 
