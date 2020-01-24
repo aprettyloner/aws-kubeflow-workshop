@@ -23,15 +23,21 @@ WORKDIR /opt/training
 Replace with `Dockerfile.gpu` if you're going to be running training on a GPU cluster.
 {{% /notice %}}
 
+
+#### Create a new Elastic Container Registry (ECR) repository
+```
+aws ecr create-repository --repository-name workshop2
+```
+
+
 #### Build and push a custom Docker container
 ```
 export ECR_REPOSITORY_URI=$(aws ecr describe-repositories --repository-names workshop --query "repositories[].repositoryUri" --output text)
 echo "export ECR_REPOSITORY_URI=${ECR_REPOSITORY_URI}" | tee -a ~/.bash_profile
 ```
 
-#### Create a new Elastic Container Registry (ECR) repository
 
-* Head over to the terminal on JupyterLab and log-in to the AWS Deep Learning registry.  We will extend the base Docker images in this repo.
+* Log-in to the AWS Deep Learning registry.  We will extend the base Docker images in this repo.
 ```
 $(aws ecr get-login --no-include-email --region us-west-2 --registry-ids 763104351884)
 
