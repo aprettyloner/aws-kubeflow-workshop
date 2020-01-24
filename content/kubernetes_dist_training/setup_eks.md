@@ -16,6 +16,21 @@ echo "export AWS_CLUSTER_NAME=${AWS_CLUSTER_NAME}" | tee -a ~/.bash_profile
 
 ```
 
+### Associated IAM and OIDC
+To use IAM roles for service accounts in your cluster, you must create an OIDC identity provider in the IAM console.  See https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html for more info.
+```
+eksctl utils associate-iam-oidc-provider --cluster ${AWS_CLUSTER_NAME} --approve
+
+aws eks describe-cluster --name ${AWS_CLUSTER_NAME} --region ${AWS_REGION} --query "cluster.identity.oidc.issuer" --output text
+
+```
+
+### Add Access to Elastic Container Registry (ECR)
+```
+aws iam attach-role-policy --role-name $INSTANCE_ROLE_NAME --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
+```
+
+
 Run the following:
 ```bash
 eksctl create cluster \
@@ -43,18 +58,4 @@ Creating a cluster may take about 15 mins.
 Navigate to the [**AWS Console**](https://console.aws.amazon.com/cloudformation) to monitor the progress:
 ```
 https://console.aws.amazon.com/cloudformation
-```
-
-### Associated IAM and OIDC
-To use IAM roles for service accounts in your cluster, you must create an OIDC identity provider in the IAM console.  See https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html for more info.
-```
-eksctl utils associate-iam-oidc-provider --cluster ${AWS_CLUSTER_NAME} --approve
-
-aws eks describe-cluster --name ${AWS_CLUSTER_NAME} --region ${AWS_REGION} --query "cluster.identity.oidc.issuer" --output text
-
-```
-
-### Add Access to Elastic Container Registry (ECR)
-```
-aws iam attach-role-policy --role-name $INSTANCE_ROLE_NAME --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
 ```
