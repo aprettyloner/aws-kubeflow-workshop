@@ -12,7 +12,7 @@ For this chapter, we will create a training image and store it in ECR.
 
 #### Run fairing introduction notebook
 
-Browse the **"eks-kubeflow-workshop"** repository and go to fairing introduction notebook (eks-kubeflow-workshop/notebooks/02_Fairing/02_01_fairing_introduction.ipynb). You can either click on the notebook to open or select and click **View**
+Browse the `aws-kubeflow-workshop` directory and go to fairing introduction notebook. You can either click on the notebook to open or select and click **View**
 
 ![dashboard](/images/kubeflow/fairing-view-introduction-notebook.png)
 

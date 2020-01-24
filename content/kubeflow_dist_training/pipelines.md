@@ -22,7 +22,7 @@ For this exercise, we will build Mnist classification pipeline using Amazon Sage
 
 In order to run this exercise, we need three levels of IAM permissions. 1) create Kubernetes secrets **aws-secret** with Sagemaker policies. We'll use this during pipeline execution to make calls to AWS API's. 2) create an IAM execution role for Sagemaker so that the job can assume this role in order to perform Sagemaker actions. Typically in a production environment, you would assign fine-grained permissions depending on the nature of actions you take and leverage tools like [IAM Role for Service Account](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) for securing access to AWS resources but for simplicity we will assign AmazonSageMakerFullAccess IAM policy to both. You can read more about granular policies [here](https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html). 3) Assign sagemaker:InvokeEndpoint permission to Worker node IAM role so that we can use this to make predictions once Sagemaker creates the endpoint
 
-Run this command from your Cloud9 to create these IAM permissions
+Run this command from your Jupyter Terminal to create these IAM permissions
 ```
 aws iam create-user --user-name sagemakeruser
 aws iam attach-user-policy --user-name sagemakeruser --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
