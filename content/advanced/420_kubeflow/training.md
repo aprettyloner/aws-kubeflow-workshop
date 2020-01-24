@@ -5,6 +5,13 @@ weight: 40
 draft: false
 ---
 
+### Install `awscli`
+From your Jupyter Notebook Terminal, run the following command:
+
+```bash
+pip install awscli
+```
+
 ### Model Training
 
 While Jupyter notebook is good for interactive model training, you may like to package the training code as Docker image and run it in Amazon EKS cluster.
@@ -19,13 +26,16 @@ Alternatively, you can use [Dockerfile](/advanced/420_kubeflow/kubeflow.files/Do
 
 `docker build -t <dockerhub_username>/<repo_name>:<tag_name> .`
 
+
+#### Setup Environment Variables
+```
+export S3_BUCKET=<your-globally-unique-bucket-name>
+```
 #### Create S3 bucket
 
 Create an S3 bucket where training model will be saved:
 
 ```
-export HASH=$(< /dev/urandom tr -dc a-z0-9 | head -c6)
-export S3_BUCKET=$HASH-eks-ml-data
 aws s3 mb s3://$S3_BUCKET --region $AWS_REGION
 ```
 
