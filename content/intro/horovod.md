@@ -26,5 +26,3 @@ size, rank, local rank, allreduce, allgather, and broadcast.
 Horovod will run the same copy of the script on all hosts/servers/nodes/instances
 
 ![mpi](/images/intro/how_it_runs.png)
-
-`horovodrun -np 16 -H server1:4,server2:4,server3:4,server4:4 python training_script.py`

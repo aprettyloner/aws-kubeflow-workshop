@@ -25,16 +25,6 @@ eksctl version
 
 ```
 
-#### Enable `eksctl` bash_completion
-```
-eksctl completion bash >> ~/.bash_completion
-
-. /etc/profile.d/bash_completion.sh
-
-. ~/.bash_completion
-
-```
-
 #### Install `kubectl`
 `kubectl` is a command line interface for running commands against Kubernetes clusters. 
 
@@ -49,15 +39,6 @@ sudo mv ./kubectl /usr/local/bin
 
 kubectl version --short --client
 
-```
-
-#### Enable `kubectl` bash_completion
-```
-kubectl completion bash >>  ~/.bash_completion
-
-. /etc/profile.d/bash_completion.sh
-
-. ~/.bash_completion
 ```
 
 #### Install `aws-iam-authenticator`
@@ -75,7 +56,7 @@ aws-iam-authenticator version
 
 #### Install jq, envsubst (from GNU gettext utilities) and bash-completion
 ```
-sudo yum -y install jq gettext bash-completion
+sudo yum -y install jq gettext
 
 ```
 

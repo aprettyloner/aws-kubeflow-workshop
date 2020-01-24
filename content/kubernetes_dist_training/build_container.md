@@ -45,7 +45,7 @@ $(aws ecr get-login --no-include-email --region us-west-2 --registry-ids 7631043
 ...
 Login Succeeded
 ```
-* Run `docker build` command in **Step 2** from the Docker push commands menu. Make sure to update it with the correct Docker file name for CPU or GPU:
+* Run `docker build` command
 ```
 docker build -t ${ECR_REPOSITORY_URI}:latest -f Dockerfile.cpu . # <== MAKE SURE YOU INCLUDE THE `.` AT THE END!
 ```
