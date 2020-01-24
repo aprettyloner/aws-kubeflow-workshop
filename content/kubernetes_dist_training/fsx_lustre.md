@@ -40,7 +40,7 @@ aws ec2 authorize-security-group-ingress --group-id ${SECURITY_GROUP_ID} --proto
 
 #### Update the environment variables in the storage class spec file
 ```
-export BUCKET_NAME=aws-kubeflow-workshop
+export BUCKET_NAME=<your-globally-unique-bucket-name>
 echo "export BUCKET_NAME=${BUCKET_NAME}" | tee -a ~/.bash_profile
 ```
 

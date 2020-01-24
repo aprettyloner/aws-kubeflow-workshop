@@ -72,7 +72,7 @@ sed -i.bak -e "s@eksctl-kubeflow-aws-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@$I
 
 sed -i.bak -e 's/kubeflow-aws/'"$AWS_CLUSTER_NAME"'/' ${CONFIG_FILE}
 
-sed -i.bak "s@us-west-2@$AWS_REGION@" ${CONFIG_FILE}
+sed -i.bak -e "s@us-west-2@$AWS_REGION@" ${CONFIG_FILE}
 
 ```
 
