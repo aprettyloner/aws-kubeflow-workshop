@@ -155,6 +155,7 @@ Create an IAM user 's3user', attach S3 access policy and retrieve temporary cred
 ```
 aws iam create-user --user-name s3user
 aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
 aws iam create-access-key --user-name s3user > /tmp/create_output.json
 ```
 
@@ -220,5 +221,7 @@ cat <<EoF > sagemaker-invoke.json
 EoF
 
 aws iam put-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-name sagemaker-invoke-for-worker --policy-document file://sagemaker-invoke.json
+
+aws iam put-role-policy --role-name ${INSTANCE_ROLE_NAME} --policy-name sagemaker-invoke-for-worker --policy-document file://sagemaker-invoke.json
 
 ```
