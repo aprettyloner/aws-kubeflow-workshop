@@ -24,7 +24,6 @@ sudo mv kfctl /usr/local/bin
 #### Get the latest Kubeflow configuration file
 ```bash
 export CONFIG_URI='https://raw.githubusercontent.com/kubeflow/manifests/v0.7-branch/kfdef/kfctl_aws.0.7.1.yaml'
-
 echo "export CONFIG_URI=${CONFIG_URI}" | tee -a ~/.bash_profile
 
 ```
@@ -147,3 +146,43 @@ _Note:  If you accidentally use the default `anonymous` namespace, you will be O
 Click `Finish` to view the dashboard
 
 ![dashboard](/images/kubeflow/dashboard-first-look.png)
+
+#### Setup AWS credentials in EKS cluster
+
+AWS credentials are required to save model on S3 bucket. These credentials are stored in EKS cluster as Kubernetes secrets.
+
+Create an IAM user 's3user', attach S3 access policy and retrieve temporary credentials
+```
+aws iam create-user --user-name s3user
+aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+aws iam create-access-key --user-name s3user > /tmp/create_output.json
+```
+
+Next, save the new user's credentials into environment variables:
+```
+export AWS_ACCESS_KEY_ID_VALUE=$(jq -j .AccessKey.AccessKeyId /tmp/create_output.json | base64)
+
+echo "export AWS_ACCESS_KEY_ID_VALUE=${AWS_ACCESS_KEY_ID_VALUE}" | tee -a ~/.bash_profile
+
+export AWS_SECRET_ACCESS_KEY_VALUE=$(jq -j .AccessKey.SecretAccessKey /tmp/create_output.json | base64)
+
+echo "export AWS_SECRET_ACCESS_KEY_VALUE=${AWS_SECRET_ACCESS_KEY_VALUE}" | tee -a ~/.bash_profile
+
+```
+
+Apply to EKS cluster.
+
+_Note:  If you used `anonymous` for the namespace, please substitute `--namespace anonymous` below._
+
+```
+cat <<EOF | kubectl apply --namespace eksworkshop -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: aws-secret
+type: Opaque
+data:
+  AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID_VALUE
+  AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY_VALUE
+EOF
+```
