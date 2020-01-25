@@ -37,6 +37,6 @@ Take the defaults and click on **Open AWS Console**. This will open AWS Console 
 
 Double-check that your account name is something like `TeamRole/MasterKey` as follows:
 
-![/images/teamrole-masterkey.png]
+![](/images/teamrole-masterkey.png)
 
 If not, please logout of your AWS Console in all browser tabs and re-run the steps above!
