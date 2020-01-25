@@ -7,6 +7,7 @@ weight: 8
 #### Check environment variables are set with valid values
 
 ```bash
+echo $S3_BUCKET
 echo $AWS_CLUSTER_NAME
 echo $STACK_NAME
 echo $INSTANCE_ROLE_NAME
