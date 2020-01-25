@@ -9,7 +9,7 @@ weight: 9
 In our Dockerfile we start with an AWS Deep Learning TensorFlow container and copy our training code into the container.
 
 ```
-cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
+cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/docker/
 
 cat Dockerfile.cpu
 
