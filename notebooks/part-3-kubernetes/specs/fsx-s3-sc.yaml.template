@@ -10,7 +10,7 @@ provisioner: fsx.csi.aws.com
 parameters:
   subnetId: SUBNET_ID 
   securityGroupIds: SECURITY_GROUP_ID
-  s3ImportPath: s3://BUCKET_NAME
-  s3ExportPath: s3://BUCKET_NAME/export
+  s3ImportPath: s3://S3_BUCKET
+  s3ExportPath: s3://S3_BUCKET/export
   apiVersion: v1
 volumeBindingMode: Immediate

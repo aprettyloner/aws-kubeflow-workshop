@@ -39,13 +39,8 @@ aws ec2 authorize-security-group-ingress --group-id ${SECURITY_GROUP_ID} --proto
 ```
 
 #### Update the environment variables in the storage class spec file
-```
-export BUCKET_NAME=<your-globally-unique-bucket-name>
-echo "export BUCKET_NAME=${BUCKET_NAME}" | tee -a ~/.bash_profile
 
-```
-
-Populate SUBNET_ID, SECURITY_GROUP_ID, BUCKET_NAME
+Populate SUBNET_ID, SECURITY_GROUP_ID, S3_BUCKET
 ```
 cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
 
@@ -53,7 +48,7 @@ sed "s@SUBNET_ID@$SUBNET_ID@" specs/fsx-s3-sc.yaml.template > specs/fsx-s3-sc.ya
 
 sed -i.bak -e "s@SECURITY_GROUP_ID@$SECURITY_GROUP_ID@" specs/fsx-s3-sc.yaml 
 
-sed -i.bak -e "s@BUCKET_NAME@$BUCKET_NAME@" specs/fsx-s3-sc.yaml
+sed -i.bak -e "s@S3_BUCKET@$S3_BUCKET@" specs/fsx-s3-sc.yaml
 
 ```
 
