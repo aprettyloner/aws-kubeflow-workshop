@@ -45,7 +45,7 @@ kubectl get pods | grep eks-tf-distributed-training
 # eks-tf-distributed-training-worker-1         1/1     Running   0          66s
 ```
 
-To observer training logs, run the following command.  Note:  You can use `tab` completion as shown below - or copy the name of the pod from the output of `kubectl get pods` above.
+To observer training logs, run the following command.  Note: Copy the name of the pod from the output of `kubectl get pods` above.
 
 ```
 kubectl logs eks-tf-distributed-training-launcher-<POD_NAME_FROM_ABOVE>
