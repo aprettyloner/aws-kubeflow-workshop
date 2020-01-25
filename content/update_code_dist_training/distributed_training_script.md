@@ -22,9 +22,9 @@ Click on **> Solution** to see the answers
 
 You'll need to make the following modifications to your training script to use horovod for distributed training.
 
-1. Run hvd.init()
-2. Pin a server GPU to be used by this process using config.gpu_options.visible_device_list.
+1. Run `hvd.init()`
+2. Pin a server GPU to be used by this process using `config.gpu_options.visible_device_list`.
 3. Scale the learning rate by the number of workers.
-4. Wrap the optimizer in hvd.DistributedOptimizer.
-5. Add hvd.callbacks.BroadcastGlobalVariablesCallback(0) to broadcast initial variable states from rank 0 to all other processes.
+4. Wrap the optimizer in `hvd.DistributedOptimizer`.
+5. Add `hvd.callbacks.BroadcastGlobalVariablesCallback(0)` to broadcast initial variable states from rank 0 to all other processes.
 6. Modify your code to save checkpoints only on worker 0 to prevent other workers from corrupting them.
