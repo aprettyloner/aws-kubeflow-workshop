@@ -49,4 +49,7 @@ git clone https://github.com/PipelineAI/aws-kubeflow-workshop
 
 #### Run the notebooks
 
-Navigate to the `aws-kubeflow-workshop/notebooks` directory and start following the examples.
+Navigate to the `aws-kubeflow-workshop / notebooks / part-3-kubernetes` directory and start following the examples.
+
+![run-notebooks](/images/kubeflow/run-notebooks.png)
+
