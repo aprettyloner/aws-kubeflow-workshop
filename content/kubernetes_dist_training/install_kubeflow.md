@@ -60,6 +60,8 @@ export CONFIG_FILE=${KF_DIR}/kfctl_aws.0.7.1.yaml
 
 echo "export CONFIG_FILE=${CONFIG_FILE}" | tee -a ~/.bash_profile
 
+```
+```
 sed -i.bak -e "s@eksctl-kubeflow-aws-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@$INSTANCE_ROLE_NAME@" ${CONFIG_FILE}
 
 sed -i.bak -e 's/kubeflow-aws/'"$AWS_CLUSTER_NAME"'/' ${CONFIG_FILE}
@@ -132,6 +134,8 @@ _Note:  If you accidentally use the default `anonymous` namespace, you will be O
 Click `Finish` to view the dashboard
 
 ![dashboard](/images/kubeflow/dashboard-first-look.png)
+
+# DO NOT CONTINUE UNTIL YOU SEE THE DASHBOARD SCREEN ABOVE !!!
 
 #### Setup AWS credentials in EKS cluster
 
