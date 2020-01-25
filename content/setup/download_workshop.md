@@ -12,11 +12,6 @@ weight: 7
 
 * Download the workshop code and notebooks:
 ```
-bash
-
-```
-
-```
 cd ~/SageMaker
 
 git clone https://github.com/PipelineAI/aws-kubeflow-workshop.git
