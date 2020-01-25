@@ -117,7 +117,7 @@ Note:  DNS is eventually consistent and will take a few minutes to propagate.  P
 echo $(kubectl get ingress -n istio-system -o jsonpath='{.items[0].status.loadBalancer.ingress[0].hostname}')
 
 ### EXPECTED OUTPUT - THIS WILL TAKE A FEW MINUTES!! ###
-<some-long-subdomain-name>.<aws-region>.elb.amazonaws.com 
+# <some-long-subdomain-name>.<aws-region>.elb.amazonaws.com 
 
 ```
 
@@ -147,6 +147,7 @@ aws iam create-user --user-name s3user
 aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
 aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
 aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonElasticMapReduceFullAccess
+aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess
 aws iam create-access-key --user-name s3user > /tmp/create_output.json
 ```
 

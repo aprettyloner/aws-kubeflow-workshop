@@ -10,3 +10,4 @@ ckpt_dir/
 dataset/
 .ipynb_checkpoints/
 __pycache__/
+notebooks/part-3-kubernetes/pipelineai/

@@ -64,6 +64,9 @@ aws iam attach-role-policy --policy-arn ${POLICY_ARN} --role-name ${INSTANCE_ROL
 #### Deploy the StorageClass and PersistentVolumeClaim
 ```
 kubectl create -f specs/fsx-s3-sc.yaml
+
+```
+```
 kubectl create -f specs/fsx-s3-pvc.yaml
 
 ```
@@ -84,9 +87,11 @@ When the claim is bound, you will see the following:
 ```
 kubectl get pvc fsx-claim
 
+```
+```
 ### EXPECTED OUTPUT ###
-NAME        STATUS   VOLUME                                     CAPACITY   ACCESSMODES   STORAGECLASS   AGE
-fsx-claim   Bound    pvc-xxx                                    1200Gi     RWX           fsx-sc         1m
+# NAME        STATUS   VOLUME                                     CAPACITY   ACCESSMODES   STORAGECLASS   AGE
+# fsx-claim   Bound    pvc-xxx                                    1200Gi     RWX           fsx-sc         1m
 ```
 
 You can monitor creation by navigating to the AWS Console, searching `FSx`, and clicking `File systems`.

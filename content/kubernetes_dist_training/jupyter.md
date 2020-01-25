@@ -7,7 +7,7 @@ draft: false
 
 ### Jupyter Notebook using Kubeflow on Amazon EKS
 
-[The Jupyter Notebook](https://jupyter.org/) is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. It is often used for data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and more.
+Jupyter Notebooks are open-source web applications that allow you to create and share documents that contain live code, equations, visualizations and narrative text. It is often used for data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and more.
 
 In the Kubeflow dashboard, click on the "hamburger" menu icon in the upper left.  Then click **Create a new Notebook server**:
 
