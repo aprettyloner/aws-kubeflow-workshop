@@ -186,3 +186,39 @@ data:
   AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY_VALUE
 EOF
 ```
+
+More credentials used by Kubeflow to access SageMaker
+```
+TRUST="{ \"Version\": \"2012-10-17\", \"Statement\": [ { \"Effect\": \"Allow\", \"Principal\": { \"Service\": \"sagemaker.amazonaws.com\" }, \"Action\": \"sts:AssumeRole\" } ] }"
+aws iam create-role --role-name eksworkshop-sagemaker-kfp-role --assume-role-policy-document "$TRUST"
+aws iam attach-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+aws iam attach-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+
+```
+
+```
+export SAGEMAKER_ROLE_ARN=$(aws iam get-role --role-name eksworkshop-sagemaker-kfp-role --output text --query 'Role.Arn')
+
+echo "export SAGEMAKER_ROLE_ARN=${SAGEMAKER_ROLE_ARN}" | tee -a ~/.bash_profile
+
+```
+
+```
+cat <<EoF > sagemaker-invoke.json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sagemaker:InvokeEndpoint"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+EoF
+
+aws iam put-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-name sagemaker-invoke-for-worker --policy-document file://sagemaker-invoke.json
+
+```
