@@ -1,5 +1,5 @@
 ---
-title: "Jupyter Notebook"
+title: "Run Jupyter Notebooks"
 date: 2019-08-26T00:00:00-08:00
 weight: 30
 draft: false
@@ -46,3 +46,7 @@ CLick on **New**, select **Terminal**
 git clone https://github.com/PipelineAI/aws-kubeflow-workshop
 
 ```
+
+#### Run the notebooks
+
+Navigate to the `aws-kubeflow-workshop/notebooks` directory and start following the examples.

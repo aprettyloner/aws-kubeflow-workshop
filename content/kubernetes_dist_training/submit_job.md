@@ -20,14 +20,11 @@ For GPU jobs use this instead: `eks_tf_training_job-gpu.yaml`
 
 #### Submit a job run:
 ```
-kubectl apply -f specs/eks_tf_training_job-cpu.yaml
+kubectl create -f specs/eks_tf_training_job-cpu.yaml
 
 ### EXPECTED OUTPUT ###
-mpijob.kubeflow.org/eks-tf-distributed-training created
+mpijob.kubeflow.org/eks-tf-distributed-training created 
 ```
-{{% notice tip %}}
-For GPU jobs use this instead: `eks_tf_training_job-gpu.yaml`
-{{% /notice %}}
 
 Running `kubectl get pods` will should you the number of workers + 1 number of pods.
 
@@ -59,4 +56,8 @@ Epoch 2/30
 Epoch 2/30
 ```
 
-Congratulations!  You are performing a distributed TensorFlow training job using Horovod on Amazon EKS with a distributed file system backed by S3.  High-five!!
+*Congratulations!*  
+
+You just trained a distributed TensorFlow model using Horovod on Amazon EKS with the FSx for Lustre distributed file system backed by S3!  
+
+*High-five!!*
