@@ -12,7 +12,7 @@ Tensorboard is running locally on your SageMaker Notebook instance, but reading 
 
 From your terminal, run the following command to start Tensorboard
 ```bash
-S3_REGION=us-west-2 tensorboard --logdir s3://<your-globally-unique-bucket-name>/tensorboard_logs/ 
+S3_REGION=us-west-2 tensorboard --logdir s3://${S3_BUCKET}/tensorboard_logs/ 
 ```
 
 Navigate to https://workshop.notebook.us-west-2.sagemaker.aws/proxy/6006/
