@@ -19,5 +19,3 @@ Open `cifar10-single-instance.ipynb` and run through the cells. The following no
 
 
 ----
-
-##### Now that you have a successfully working training script, open `cifar10-distributed.ipynb` and start converting it for distributed training
