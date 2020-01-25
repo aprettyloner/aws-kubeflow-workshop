@@ -180,6 +180,21 @@ data:
 EOF
 ```
 
+Add the secret to the `kubeflow` namespace, as well.  This is needed until KF Pipelines support namespaces.
+```
+cat <<EOF | kubectl apply --namespace kubeflow -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: aws-secret
+type: Opaque
+data:
+  AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID_VALUE
+  AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY_VALUE
+EOF
+```
+
+
 More credentials used by Kubeflow to access SageMaker
 ```
 TRUST="{ \"Version\": \"2012-10-17\", \"Statement\": [ { \"Effect\": \"Allow\", \"Principal\": { \"Service\": \"sagemaker.amazonaws.com\" }, \"Action\": \"sts:AssumeRole\" } ] }"
