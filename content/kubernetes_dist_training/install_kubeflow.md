@@ -67,21 +67,6 @@ sed -i.bak -e "s@us-west-2@$AWS_REGION@" ${CONFIG_FILE}
 
 ```
 
-#### Download Kubeflow manifests
-
-```
-cd ${KF_DIR}
-
-wget https://github.com/kubeflow/manifests/archive/v0.7-branch.tar.gz
-
-tar xvf v0.7-branch.tar.gz
-
-# TODO: Change uri field in .yaml file to point to the downloaded manifest directory. 
-#       /home/ec2-user/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/pipelineai/manifests-0.7-branch` 
-
-```
-
-
 #### Generate the Kubeflow installation files
 ```bash
 cd ${KF_DIR}
