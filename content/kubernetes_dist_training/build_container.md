@@ -1,7 +1,7 @@
 ---
 title: "Build training container image and push it to ECR"
 date: 2019-10-28T16:51:02-07:00
-weight: 91
+weight: 9
 ---
 
 #### Build a custom docker image with our training code

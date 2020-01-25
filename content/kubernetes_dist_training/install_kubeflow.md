@@ -4,6 +4,15 @@ date: 2019-10-28T15:42:44-07:00
 weight: 8 
 ---
 
+#### Check environment variables are set with valid values
+
+```bash
+echo $AWS_CLUSTER_NAME
+echo $STACK_NAME
+echo $INSTANCE_ROLE_NAME
+echo $INSTANCE_PROFILE_ARN
+```
+
 #### Download the `kfctl` CLI tool
 ```bash
 curl --location https://github.com/kubeflow/kfctl/releases/download/v1.0-rc.1/kfctl_v1.0-rc.1-0-g963c787_linux.tar.gz | tar xz
@@ -19,16 +28,6 @@ export CONFIG_URI='https://raw.githubusercontent.com/kubeflow/manifests/v0.7-bra
 echo "export CONFIG_URI=${CONFIG_URI}" | tee -a ~/.bash_profile
 
 ```
-
-#### Check environment variables are set
-
-```bash
-echo $AWS_CLUSTER_NAME
-echo $STACK_NAME
-echo $INSTANCE_ROLE_NAME
-echo $INSTANCE_PROFILE_ARN
-```
-
 
 #### Set Kubeflow environment variables 
 
@@ -78,8 +77,8 @@ wget https://github.com/kubeflow/manifests/archive/v0.7-branch.tar.gz
 
 tar xvf v0.7-branch.tar.gz
 
-TODO: Change uri field in .yaml file to point to the downloaded manifest directory. 
-`/home/ec2-user/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/pipelineai/manifests-0.7-branch` 
+# TODO: Change uri field in .yaml file to point to the downloaded manifest directory. 
+#       /home/ec2-user/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/pipelineai/manifests-0.7-branch` 
 
 ```
 

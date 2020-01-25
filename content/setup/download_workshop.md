@@ -10,16 +10,21 @@ weight: 7
 * Click `File > New >  Terminal` to launch terminal in your Jupyter instance.
 ![Launch terminal](/images/setup/launch_terminal.png)
 
-* Download the workshop code and notebooks. Enter bash (optional), change directory to ~/SageMaker, clone the repository:
-
+* Download the workshop code and notebooks:
 ```
 bash
+
+```
+
+```
 cd ~/SageMaker
+
 git clone https://github.com/PipelineAI/aws-kubeflow-workshop.git
+
 ```
 
 * Confirm that you're able to see the contents.
 ```
-bash
 ls aws-kubeflow-workshop/notebooks
+
 ```
