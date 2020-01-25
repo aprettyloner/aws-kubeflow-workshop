@@ -156,6 +156,7 @@ Create an IAM user 's3user', attach S3 access policy and retrieve temporary cred
 aws iam create-user --user-name s3user
 aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
 aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+aws iam attach-user-policy --user-name s3user --policy-arn arn:aws:iam::aws:policy/AmazonElasticMapReduceFullAccess
 aws iam create-access-key --user-name s3user > /tmp/create_output.json
 ```
 
@@ -192,9 +193,9 @@ More credentials used by Kubeflow to access SageMaker
 ```
 TRUST="{ \"Version\": \"2012-10-17\", \"Statement\": [ { \"Effect\": \"Allow\", \"Principal\": { \"Service\": \"sagemaker.amazonaws.com\" }, \"Action\": \"sts:AssumeRole\" } ] }"
 aws iam create-role --role-name eksworkshop-sagemaker-kfp-role --assume-role-policy-document "$TRUST"
-aws iam attach-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
 aws iam attach-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
-
+aws iam attach-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+aws iam attach-role-policy --role-name eksworkshop-sagemaker-kfp-role --policy-arn arn:aws:iam::aws:policy/AmazonElasticMapReduceFullAccess
 ```
 
 ```
