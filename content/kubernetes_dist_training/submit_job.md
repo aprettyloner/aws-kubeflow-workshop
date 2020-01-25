@@ -20,7 +20,7 @@ For GPU jobs use this instead: `eks_tf_training_job-gpu.yaml`
 
 #### Submit a job run:
 ```
-kubectl create -f specs/eks_tf_training_job-cpu.yaml
+kubectl create -n default -f specs/eks_tf_training_job-cpu.yaml
 
 ```
 ```
@@ -33,7 +33,7 @@ Running `kubectl get pods` will should you the number of workers + 1 number of p
 _Note:  You may see some pods in the `Initializing` state.  This is OK.  Try again in a few seconds._
 
 ```bash
-kubectl get pods | grep eks-tf-distributed-training
+kubectl get pods -n default | grep eks-tf-distributed-training
 
 ```
 ```
@@ -48,7 +48,7 @@ kubectl get pods | grep eks-tf-distributed-training
 To observer training logs, run the following command.  Note: Copy the name of the pod from the output of `kubectl get pods` above.
 
 ```
-kubectl logs eks-tf-distributed-training-launcher-<POD_NAME_FROM_ABOVE>
+kubectl logs -n default eks-tf-distributed-training-launcher-<POD_NAME_FROM_ABOVE>
 
 ```
 ```
