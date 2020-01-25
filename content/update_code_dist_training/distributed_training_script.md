@@ -14,7 +14,7 @@ Open `cifar10-distributed.ipynb` and run through the cells. The following notebo
 ![singe_instance](/images/convert_script/distributed_script.png)
 
 {{% notice warning %}}
-**Stop:** Do this section in a Jupyter Notebook. Below is a copy of the Jupyter Notebook for reference. <br><br>
+**Stop:** Do this section in a Jupyter Notebook. <br><br>
 Open `cifar10-distributed.ipynb` and run these cells. <br><br>
 Look for cells that say **Change X** and fill in those cells with the modifications - where **X** is the change number. There are a total of 8 changes.
 Click on **> Solution** to see the answers
