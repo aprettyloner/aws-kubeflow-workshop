@@ -7,6 +7,7 @@ weight: 2
 From the terminal, navigate to the following directory for part 3 of the workshop
 ```
 cd ~/SageMaker/aws-kubeflow-workshop/notebooks/part-3-kubernetes/
+
 ```
 
 
