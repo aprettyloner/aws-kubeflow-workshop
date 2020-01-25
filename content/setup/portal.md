@@ -17,7 +17,11 @@ This workshop creates an ephemeral AWS acccount for you to use only for this wor
 
 You will need the **Participant Hash** provided upon entry, and your email address to track your unique session.
 
-Connect to the portal by clicking the button or browsing to [https://dashboard.eventengine.run/](https://dashboard.eventengine.run/). The following screen shows up.
+Connect to the portal by clicking the button or browsing to the following url:
+
+[**https://dashboard.eventengine.run/**](https://dashboard.eventengine.run/).
+
+We will provide you with a hash code.  Enter this code when you see the following screen.
 
 ![Event Engine](/images/event-engine-initial-screen.png)
 
