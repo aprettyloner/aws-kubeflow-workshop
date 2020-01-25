@@ -46,16 +46,17 @@ export S3_BUCKET=<your-globally-unique-bucket-name>
 
 ```
 {{% notice warning %}}
-**Note:** Bucket names should be unique globally. If a bucket with the same name already exists, add another unique identifier such as today's date or your last name.
+**Note:** Bucket names should be unique globally.  If a bucket with the same name already exists, add another unique identifier such as today's date or your last name.  BUCKET NAMES SHOULD NOT CONTAIN CAPITAL LETTERS.  And should only include hyphens (`-').
 {{% /notice %}}
 
-```
-echo "export S3_BUCKET=${S3_BUCKET}" | tee -a ~/.bash_profile
-
-```
 Create a new S3 bucket and upload the dataset to it. Be sure to add a unique identifier, such as your name.
 ```
 aws s3 mb s3://${S3_BUCKET}
+
+```
+
+```
+echo "export S3_BUCKET=${S3_BUCKET}" | tee -a ~/.bash_profile
 
 ```
 
